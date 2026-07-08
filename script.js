@@ -34,9 +34,9 @@
     );
   }
 
-  const canTrackTilt = window.matchMedia("(pointer: coarse)").matches;
+  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
-  if (canTrackTilt && !prefersReducedMotion && window.DeviceOrientationEvent) {
+  if (isTouchDevice && !prefersReducedMotion && window.DeviceOrientationEvent) {
     const maxTiltDeg = 22;
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 2;
@@ -105,6 +105,83 @@
       },
       { passive: true }
     );
+  }
+
+  if (isTouchDevice && !prefersReducedMotion) {
+    const spawnRipple = (x, y) => {
+      const ripple = document.createElement("span");
+      ripple.className = "tap-ripple";
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      root.appendChild(ripple);
+
+      requestAnimationFrame(() => {
+        ripple.classList.add("is-active");
+      });
+
+      ripple.addEventListener("transitionend", () => ripple.remove(), { once: true });
+    };
+
+    document.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.touches[0];
+        if (!touch) return;
+        spawnRipple(touch.clientX, touch.clientY);
+      },
+      { passive: true }
+    );
+  }
+
+  if (isTouchDevice && !prefersReducedMotion) {
+    const maxCardTiltDeg = 5;
+    const tiltCards = Array.from(document.querySelectorAll(".project-item"));
+
+    const updateCardTilt = (card, touch) => {
+      const rect = card.getBoundingClientRect();
+      const px = (touch.clientX - rect.left) / rect.width;
+      const py = (touch.clientY - rect.top) / rect.height;
+
+      const rx = (0.5 - py) * maxCardTiltDeg;
+      const ry = (px - 0.5) * maxCardTiltDeg;
+
+      card.style.setProperty("--card-rx", `${rx.toFixed(2)}deg`);
+      card.style.setProperty("--card-ry", `${ry.toFixed(2)}deg`);
+      card.style.setProperty("--card-glow-x", `${(px * 100).toFixed(1)}%`);
+      card.style.setProperty("--card-glow-y", `${(py * 100).toFixed(1)}%`);
+    };
+
+    const resetCardTilt = (card) => {
+      card.classList.remove("is-tilting");
+      card.style.setProperty("--card-rx", "0deg");
+      card.style.setProperty("--card-ry", "0deg");
+    };
+
+    tiltCards.forEach((card) => {
+      card.addEventListener(
+        "touchstart",
+        (event) => {
+          const touch = event.touches[0];
+          if (!touch) return;
+          card.classList.add("is-tilting");
+          updateCardTilt(card, touch);
+        },
+        { passive: true }
+      );
+
+      card.addEventListener(
+        "touchmove",
+        (event) => {
+          const touch = event.touches[0];
+          if (!touch) return;
+          updateCardTilt(card, touch);
+        },
+        { passive: true }
+      );
+
+      card.addEventListener("touchend", () => resetCardTilt(card), { passive: true });
+      card.addEventListener("touchcancel", () => resetCardTilt(card), { passive: true });
+    });
   }
 
   const heroStage = document.querySelector(".hero-stage");
