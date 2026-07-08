@@ -34,6 +34,79 @@
     );
   }
 
+  const canTrackTilt = window.matchMedia("(pointer: coarse)").matches;
+
+  if (canTrackTilt && !prefersReducedMotion && window.DeviceOrientationEvent) {
+    const maxTiltDeg = 22;
+    let centerX = window.innerWidth / 2;
+    let centerY = window.innerHeight / 2;
+    let targetX = centerX;
+    let targetY = centerY;
+    let lightX = centerX;
+    let lightY = centerY;
+    let frameId = 0;
+    let baseBeta = null;
+    let baseGamma = null;
+
+    const updateSpotlight = () => {
+      lightX += (targetX - lightX) * 0.12;
+      lightY += (targetY - lightY) * 0.12;
+
+      root.style.setProperty("--spotlight-x", `${lightX.toFixed(1)}px`);
+      root.style.setProperty("--spotlight-y", `${lightY.toFixed(1)}px`);
+
+      frameId = requestAnimationFrame(updateSpotlight);
+    };
+
+    const handleOrientation = (event) => {
+      const { beta, gamma } = event;
+      if (beta === null || gamma === null) return;
+
+      if (baseBeta === null) {
+        baseBeta = beta;
+        baseGamma = gamma;
+      }
+
+      const tiltX = Math.max(-maxTiltDeg, Math.min(maxTiltDeg, gamma - baseGamma));
+      const tiltY = Math.max(-maxTiltDeg, Math.min(maxTiltDeg, beta - baseBeta));
+
+      targetX = centerX + (tiltX / maxTiltDeg) * (window.innerWidth * 0.4);
+      targetY = centerY + (tiltY / maxTiltDeg) * (window.innerHeight * 0.4);
+
+      if (!frameId) {
+        frameId = requestAnimationFrame(updateSpotlight);
+      }
+    };
+
+    const startTiltTracking = () => {
+      window.addEventListener("deviceorientation", handleOrientation, { passive: true });
+    };
+
+    if (typeof DeviceOrientationEvent.requestPermission === "function") {
+      const requestTiltPermission = () => {
+        document.removeEventListener("touchend", requestTiltPermission);
+        DeviceOrientationEvent.requestPermission()
+          .then((state) => {
+            if (state === "granted") startTiltTracking();
+          })
+          .catch(() => {});
+      };
+
+      document.addEventListener("touchend", requestTiltPermission, { passive: true });
+    } else {
+      startTiltTracking();
+    }
+
+    window.addEventListener(
+      "resize",
+      () => {
+        centerX = window.innerWidth / 2;
+        centerY = window.innerHeight / 2;
+      },
+      { passive: true }
+    );
+  }
+
   const heroStage = document.querySelector(".hero-stage");
 
   if (heroStage) {
