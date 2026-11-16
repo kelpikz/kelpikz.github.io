@@ -1,253 +1,622 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ajitha Prasad - Full stack developer at Optmyzr building AI agents, retrieval systems, evals, and infrastructure.">
-    <meta property="og:title" content="Ajitha Prasad">
-    <meta property="og:description" content="Full stack developer at Optmyzr building AI agents, retrieval systems, evals, and infrastructure.">
-    <meta property="og:type" content="website">
-    <title>Ajitha Prasad</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=27">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-      </nav>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ajitha Prasad</title>
+<meta name="description" content="Ajitha Prasad builds AI agents, retrieval systems and backends.">
+<meta name="theme-color" content="#ece2c7" id="theme">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239fcbe0'/%3E%3Ccircle cx='21' cy='11' r='5' fill='%23f2a51f'/%3E%3Cpath d='M0 20h32v6a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z' fill='%2327357f'/%3E%3Cpath d='M7 22h15c0 3-3 5-7.5 5S7 25 7 22z' fill='%23d5432a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #ece2c7; --ink: #1b1613; --pale: #f6f0e2; --deep: #12172e; --sindoor: #a3261a; --maroon: #7a1321; --haldi: #f3bd45; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    --bg: var(--paper); --text: var(--ink); --accent: var(--sindoor); --gut: clamp(18px, 5vw, 48px);
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Eczar', Georgia, 'Times New Roman', serif; font-size: 1.0625rem;
+    transition: background-color .8s ease, color .45s ease;
+  }
+  body[data-mood="dusk"] { --accent: var(--maroon); }
+  body[data-ink="light"] { --bg: var(--deep); --text: var(--pale); --accent: var(--haldi); }
 
-      <div class="socials" aria-label="Social links">
-        <a href="https://github.com/kelpikz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/ajitha-prasad-y/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.62h3.96V21H3V9.62Zm6.18 0h3.79v1.55h.05c.53-.95 1.82-1.95 3.74-1.95 4 0 4.74 2.63 4.74 6.06V21h-3.95v-5.08c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68V21H9.18V9.62Z"/></svg>
-        </a>
-        <a href="assets/Ajitha_Prasad_Resume_Website.pdf" aria-label="Resume">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.75h8.35L19 7.4v13.85H6V2.75Zm7.5 1.75v3.75h3.75L13.5 4.5ZM7.75 4.5v15h9.5v-9.75H12V4.5h-4.25Zm2 8h5.5V14h-5.5v-1.5Zm0 3h5.5V17h-5.5v-1.5Z"/></svg>
-        </a>
-      </div>
+  /* the picture: one drawing that stays, the loose drawings that move over it, and the sheet that is rubbed away on arrival */
+  .picture { position: relative; overflow: hidden; touch-action: manipulation; }
+  .picture canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  #veil { opacity: 0; pointer-events: none; }
+  body:not(.full):not(.stack) .picture { display: none; }
+
+  /* the words */
+  h1 { font-size: 3.05em; font-weight: 700; line-height: 1; letter-spacing: -0.012em; margin: 0; white-space: nowrap; }
+  .tag { font-size: 1.24em; font-weight: 500; line-height: 1.3; margin: .42em 0 0; }
+  .about { margin-top: 1.15em; }
+  .about p { margin: 0 0 .78em; line-height: 1.56; max-width: 34em; text-wrap: pretty; }
+  .about strong { font-weight: 600; }
+  .links { list-style: none; margin: 1.05em 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25em 1.35em; font-weight: 600; }
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: .09em; text-underline-offset: .2em; transition: color .15s ease; }
+  a:hover { color: var(--accent); }
+  body[data-ink="light"] .words, body[data-ink="light"] .tools { text-shadow: 0 1px .7em rgba(8, 10, 28, .7); }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* the hour and the stop */
+  .tools { display: flex; align-items: baseline; gap: 1.5em; font-size: .95rem; font-weight: 500; }
+  .moods { display: flex; gap: .9em; }
+  .tools button { font: inherit; color: inherit; text-shadow: inherit; background: none; border: 0; padding: .3em .12em; cursor: pointer; opacity: .74; transition: opacity .15s ease; }
+  .tools button:hover, .tools button:focus-visible { opacity: 1; }
+  .moods button[aria-pressed="true"] { opacity: 1; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: .14em; text-underline-offset: .32em; }
+  .moods button[aria-busy="true"] { opacity: .45; }
+
+  /* with no picture (scripts off, or it did not load) the words sit on plain paper */
+  body:not(.full):not(.stack) main { padding: 2.2rem var(--gut); max-width: 44rem; }
+  body:not(.full):not(.stack) .tools { display: none; }
+
+  /* a wide window: the picture is the page, and the words are set in its open sky */
+  body.full { overflow: hidden; height: 100vh; height: 100svh; }
+  body.full .picture { position: fixed; inset: 0; }
+  body.full .words { position: absolute; z-index: 2; }
+  body.full .about p { max-width: none; }
+
+  /* at night the sky is full of stars: the part of it behind the words is a little darker */
+  body.full .words::before, body.stack .title::before {
+    content: ''; position: absolute; z-index: -1; inset: -1.1em -1.6em -1.3em -1.4em; border-radius: 3em;
+    background: rgba(10, 13, 34, .6); filter: blur(1.7em); opacity: 0; transition: opacity .6s ease; pointer-events: none;
+  }
+  body[data-ink="light"].full .words::before, body[data-ink="light"].stack .title::before { opacity: 1; }
+  body.stack.below .title::before { display: none; }
+  body.full .tools { position: fixed; z-index: 2; top: clamp(12px, 3.4vh, 32px); right: clamp(18px, 3vw, 46px); }
+
+  /* a narrow or upright window: the picture first, the name in its sky, the rest below on paper */
+  body.stack main { position: relative; overflow: hidden; }
+  body.stack .picture { height: 72vh; height: 72svh; }
+  body.stack .words { display: contents; }
+  body.stack .title { position: absolute; z-index: 2; }
+  body.stack.below .title { position: static; padding: 1.4rem var(--gut) 0; }
+  body.stack .about { margin: 0; padding: 1.5rem var(--gut) 0; }
+  body.stack .tools { padding: 1.5rem var(--gut) 2.6rem; }
+  body.stack .tools button { padding: .5em .2em; }
+
+  @media (prefers-reduced-motion: reduce) { body, a, .tools button { transition: none; } }
+</style>
+</head>
+<body data-ink="dark" data-mood="day">
+<main id="main">
+  <div class="picture" id="picture" role="img" aria-label="A lake drawn in pastel in the manner of Mewar painting. A flower boat rides on blue water below a white pavilion and low hills, and cranes cross the sky.">
+    <canvas id="paint"></canvas>
+    <canvas id="cels"></canvas>
+    <canvas id="veil"></canvas>
+  </div>
+
+  <div class="words" id="words">
+    <header class="title" id="title">
+      <h1>Ajitha Prasad</h1>
+      <p class="tag">Building AI agents, retrieval systems and backends</p>
     </header>
+    <div class="about" id="about">
+      <p>I write software for a living. Most of it is AI agents, the retrieval systems that feed them and the backends they run on. Since 2023 I have worked at <strong>Optmyzr</strong>, where I built a chat agent and an agent that writes rules.</p>
+      <p>Before that I led the web team of <strong>Pragyan</strong>, the tech fest of NIT Trichy. These days I like to learn new things and build small experiments. You can find some of them in <a href="https://files.ajitha.fyi/">my project collection</a>.</p>
+      <ul class="links">
+        <li><a href="assets/Ajitha_Prasad_Resume_Website.pdf">R&eacute;sum&eacute;</a></li>
+        <li><a href="https://github.com/kelpikz">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ajitha-prasad-y/">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
 
-    <main id="top" class="page">
-      <section id="about" class="hero-stage" aria-labelledby="title">
-        <div class="hero">
-          <div class="hero-identity">
-            <h1 id="title">Ajitha Prasad</h1>
-            <p class="hero-role">Full Stack Developer</p>
-            <div class="hero-line-switch" aria-live="polite">
-              <p class="hero-line hero-line-intro">I build reliable AI products, backend systems, and web infrastructure.</p>
-              <p class="hero-line hero-line-stack">Languages, frameworks, data stores, and tools I use to ship production systems.</p>
-            </div>
-            <a class="hero-cta" href="https://www.linkedin.com/in/ajitha-prasad-y/" target="_blank" rel="noopener noreferrer">Let&apos;s talk</a>
-            <span class="rule" aria-hidden="true"></span>
-          </div>
+  <div class="tools" id="tools">
+    <div class="moods" role="group" aria-label="Time of day in the picture">
+      <button type="button" data-mood="day" aria-pressed="false">Day</button>
+      <button type="button" data-mood="dusk" aria-pressed="false">Dusk</button>
+      <button type="button" data-mood="night" aria-pressed="false">Night</button>
+    </div>
+    <button type="button" id="pause">Pause</button>
+  </div>
+</main>
 
-          <div class="hero-panels">
-            <div class="hero-intro hero-panel" aria-label="Introduction">
-              <p>
-                I am a <strong>full-stack software developer</strong> at <strong>Optmyzr</strong>, with <strong>3+ years of coding experience</strong> across backend systems, web apps, and product infrastructure. These days, my work focuses on <strong>production AI agents</strong>, retrieval systems, evals, and full-stack infrastructure.
-              </p>
-              <p>
-                I like solving <strong>ambiguous problems</strong> and turning them into software that is reliable, maintainable, and genuinely useful. I care a lot about craft: clear interfaces, stable systems, fast feedback loops, and the small details that make a product feel <strong>high quality</strong>.
-              </p>
-              <p>
-                Outside work, I am usually reading <strong>history</strong> or <strong>philosophy</strong> over coffee, travelling to new places, or taking photos.
-              </p>
-            </div>
+<script src="assets/scenes.js"></script>
+<script>
+/* The lake, moving.
 
-            <div class="hero-stack hero-panel" aria-label="Technology stack">
-              <section class="stack-group">
-                <h2>Languages</h2>
-                <div class="stack-list">
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" loading="lazy">C#</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy">TypeScript</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy">Python</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="" loading="lazy">Go</span>
-                </div>
-              </section>
+   The picture is made the way a drawn film is made.  One background, drawn once.  Over it, loose drawings of everything
+   that moves ("cels"), each drawn more than once so the line shifts a little from one to the next.  They are shown twelve
+   to the second, and their places step at the same rate.  The drawings themselves come from make.mjs; this page only
+   lays them down.  assets/scenes.js says where each drawing is on its sheet and what each actor does. */
+(function () {
+  'use strict';
+  var SC = window.LAKE_SCENES;
+  var $ = function (id) { return document.getElementById(id); };
+  var body = document.body, picture = $('picture'), words = $('words'), title = $('title'), h1 = title.querySelector('h1');
+  var paint = $('paint'), celsC = $('cels'), veil = $('veil'), pauseBtn = $('pause'), theme = $('theme');
+  var moodBtns = Array.prototype.slice.call(document.querySelectorAll('.moods button'));
+  if (!SC || !paint.getContext) return;                 // the words stay, on plain paper
+  var pctx = paint.getContext('2d'), cctx = celsC.getContext('2d'), vctx = veil.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+  var rr = function (a, b) { return a + Math.random() * (b - a); };
+  var pick = function (a) { return a[(Math.random() * a.length) | 0]; };
+  var TICK = 1 / 12;
 
-              <section class="stack-group">
-                <h2>Frontend</h2>
-                <div class="stack-list">
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy">React</span>
-                  <span class="stack-item"><span class="stack-glyph">GQ</span>GraphQL</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="" loading="lazy">Next.js</span>
-                </div>
-              </section>
+  // ---- which hour it is in the picture -----------------------------------------------------------
+  var query = new URLSearchParams(location.search);
+  function moodNow() {
+    var m = query.get('mood');
+    if (m === 'day' || m === 'dusk' || m === 'night') return m;
+    var h = parseFloat(query.get('hour'));
+    if (!(h >= 0 && h < 24)) { var d = new Date(); h = d.getHours() + d.getMinutes() / 60; }
+    return h < 5 || h >= 19.5 ? 'night' : h < 7 || h >= 17 ? 'dusk' : 'day';
+  }
 
-              <section class="stack-group">
-                <h2>Backend</h2>
-                <div class="stack-list">
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt="" loading="lazy">.NET</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" loading="lazy">Node.js</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" loading="lazy">FastAPI</span>
-                  <span class="stack-item"><span class="stack-glyph">RPC</span>gRPC</span>
-                </div>
-              </section>
+  var mood = moodNow(), fmt = 'wide', mode = 'full';
+  var bw = 0, bh = 0, k = 1, ox = 0, oy = 0, dpr = 1, K = 1, OX = 0, OY = 0;   // the box, and sheet units to pixels
+  var scene = null, CELS = null, ATLAS = null, SS = 1, MUTE = false;
+  var actors = [], tick = 0, acc = 0, last = 0, raf = 0;
+  var wantPlay = !reduce.matches, playing = false, scrib = null, busy = true;
+  var RINGS = [];
 
-              <section class="stack-group">
-                <h2>Databases</h2>
-                <div class="stack-list">
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" loading="lazy">MySQL</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" loading="lazy">MongoDB</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" loading="lazy">Postgres</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="" loading="lazy">Redis</span>
-                </div>
-              </section>
+  // ---- loading ------------------------------------------------------------------------------------
+  var cache = {};
+  function img(src) {
+    if (!cache[src]) cache[src] = new Promise(function (res, rej) {
+      var i = new Image();
+      i.decoding = 'async';
+      i.onload = function () { (i.decode ? i.decode().catch(function () {}) : Promise.resolve()).then(function () { res(i); }); };
+      i.onerror = function () { rej(new Error('could not load ' + src)); };
+      i.src = 'assets/' + src;
+    });
+    return cache[src];
+  }
+  function loadScene(m, f) {
+    var key = m + '-' + f, man = SC[key];
+    return Promise.all([img(man.bg), img(man.atlas)]).then(function (r) { return { key: key, mood: m, fmt: f, man: man, bg: r[0], atlas: r[1] }; });
+  }
 
-              <section class="stack-group">
-                <h2>Tools</h2>
-                <div class="stack-list">
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" loading="lazy">Docker</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" loading="lazy">Git</span>
-                  <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" loading="lazy">AWS</span>
-                  <span class="stack-item"><span class="stack-glyph">Cl</span>Claude</span>
-                  <span class="stack-item"><span class="stack-glyph">Pi</span>Pi</span>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
+  // ---- where things go ---------------------------------------------------------------------------
+  // the sheet covers the box; what does not fit is cut, least of all near the point the sheet says to keep
+  function fitBox(man, w, h) { var kk = Math.max(w / man.w, h / man.h); return { k: kk, ox: (w - man.w * kk) * man.focus[0], oy: (h - man.h * kk) * man.focus[1] }; }
+  // the part of the box where the sky is kept clear for the words
+  function skyRect(f, w, h) {
+    var man = SC['day-' + f], m = fitBox(man, w, h);
+    return { x0: Math.max(0, m.ox), y0: Math.max(0, m.oy), x1: Math.min(w, m.ox + man.w * man.sky.u1 * m.k), y1: Math.min(h, m.oy + man.h * man.sky.v1 * m.k) };
+  }
+  function setMode(m) { body.classList.toggle('full', m === 'full'); body.classList.toggle('stack', m === 'stack'); }
 
-      <section id="experience" class="panel" aria-labelledby="experience-title">
-        <h2 id="experience-title">Experience</h2>
-        <div class="experience-list">
-          <article class="experience-item">
-            <div class="experience-meta">
-              <time>2023 - Present</time>
-              <span>Optmyzr</span>
-            </div>
-            <div class="experience-copy">
-              <h3>Software Engineer at Optmyzr</h3>
-              <p>
-                Building production AI and full-stack systems for PPC marketing: Sidekick, a conversational AI agent, a multi-agent natural-language-to-DSL rule builder, a RAG support bot over internal knowledge, and a portfolio management platform aggregating ad performance data across major ad networks.
-              </p>
-              <ul>
-                <li>Built agent orchestration, tool-access harnesses, prompt flows, guardrails, and eval benchmarks for reliable tool calling across internal optimization services.</li>
-                <li>Built a multi-agent system that turns plain-English requests into executable DSL programs for the company's Rule Engine, with a Pinecone retrieval harness and a compile-and-repair loop that feeds compiler errors back to the agent for self-correction &mdash; improving accuracy from 35% to 82% and cutting latency from 200s+ to 45-60s.</li>
-                <li>Created a RAG support system over 10,000+ help articles, conversations, internal threads, and product documents with refreshed embeddings and citation-oriented answers.</li>
-                <li>Developed portfolio tooling over 1,000+ portfolios and 3,000+ accounts, with GraphQL, React, MongoDB, DuckDB, .NET, and C#.</li>
-              </ul>
-              <p class="experience-stack experience-stack--rule">Tech stack: C#, .NET, JavaScript, React, GraphQL, MongoDB, DuckDB, Redis, AWS, AI agents, RAG, Pinecone</p>
-            </div>
-          </article>
+  function layout() {
+    var vw = document.documentElement.clientWidth, vh = window.innerHeight;
+    var m = vw / vh >= 1.25 && vw >= 760 && vh >= 430 ? 'full' : 'stack', f = 'wide', w = vw, h = vh, ok, fs, r, left, top, aw, ah;
+    body.classList.remove('below');
+    if (m === 'full') {
+      setMode('full'); title.style.cssText = ''; picture.style.height = '';
+      r = skyRect('wide', vw, vh);
+      left = r.x0 + clamp(vw * 0.045, 22, 84); top = r.y0 + clamp(vh * 0.055, 18, 60); aw = r.x1 - left - 12; ah = r.y1 - top - 6;
+      words.style.left = left + 'px'; words.style.top = top + 'px';
+      // the largest type that fits; a longer line is tried before a smaller size
+      for (ok = false, fs = clamp(vw / 80, 17, 23); fs >= 12.5 && !ok; fs -= 0.5) {
+        words.style.fontSize = fs + 'px';
+        for (var wide = 0; wide < 2 && !ok; wide++) {
+          words.style.width = Math.min(aw, fs * (wide ? 43 : 33.5)) + 'px';
+          ok = words.offsetHeight <= ah && h1.scrollWidth <= words.clientWidth + 1;
+        }
+      }
+      if (!ok) m = 'stack';
+    }
+    if (m === 'stack') {
+      setMode('stack'); words.style.cssText = '';
+      var loss = function (W, H, hh) { var kk = Math.max(vw / W, hh / H); return 1 - vw * hh / (W * kk * H * kk); };
+      var lo = vh * 0.5, hi = Math.max(vh * 0.8, 300), hT = clamp(vw * 1250 / 800, lo, hi), hW = clamp(vw * 900 / 1600, lo, hi);
+      if (loss(800, 1250, hT) <= loss(1600, 900, hW)) { f = 'tall'; h = hT; } else { f = 'wide'; h = hW; }
+      h = Math.round(h); picture.style.height = h + 'px';
+      r = skyRect(f, vw, h);
+      left = r.x0 + clamp(vw * 0.05, 18, 48); top = r.y0 + clamp(h * 0.03, 12, 30); aw = r.x1 - left - 10; ah = r.y1 - top - 4;
+      title.style.left = left + 'px'; title.style.top = top + 'px'; title.style.width = aw + 'px';
+      for (ok = false, fs = 19; fs >= 11.5 && !ok; fs -= 0.5) { title.style.fontSize = fs + 'px'; ok = title.offsetHeight <= ah && h1.scrollWidth <= aw + 1; }
+      if (!ok) { body.classList.add('below'); title.style.cssText = ''; }
+    }
+    mode = m; fmt = f; bw = w; bh = h;
+  }
 
-          <article class="experience-item">
-            <div class="experience-meta">
-              <time>2022 - 2023</time>
-              <span>Pragyan, NIT Trichy</span>
-            </div>
-            <div class="experience-copy">
-              <h3>Web Ops Head at Pragyan</h3>
-              <p>
-                Led web operations for Pragyan, NIT Trichy's official technical fest, which brings 8,000+ attendees and 40,000+ annual visitors across its online platforms.
-              </p>
-              <ul>
-                <li>Managed a 60+ member team building and maintaining the official fest website, registration flows, event platforms, results systems, and online experiences.</li>
-                <li>Owned reliability, launch coordination, and SEO-focused site delivery for high-traffic festival periods.</li>
-              </ul>
-              <p class="experience-stack experience-stack--rule">Tech stack: React, TypeScript, Python, FastAPI, Docker, PostgreSQL</p>
-            </div>
-          </article>
+  function mapScene(man) {
+    var m = fitBox(man, bw, bh);
+    k = m.k; ox = m.ox; oy = m.oy;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    while (dpr > 1 && bw * bh * dpr * dpr > 5.5e6) dpr -= 0.25;
+    K = k * dpr; OX = Math.round(ox * dpr); OY = Math.round(oy * dpr);
+    var cw = Math.round(bw * dpr), ch = Math.round(bh * dpr);
+    [paint, celsC, veil].forEach(function (c) { if (c.width !== cw || c.height !== ch) { c.width = cw; c.height = ch; } });
+  }
+  function drawPaint() {
+    pctx.imageSmoothingQuality = 'high';
+    pctx.clearRect(0, 0, paint.width, paint.height);
+    pctx.drawImage(scene.bg, OX, OY, Math.round(scene.man.w * K), Math.round(scene.man.h * K));
+  }
 
-          <article class="experience-item">
-            <div class="experience-meta">
-              <time>2020 - 2023</time>
-              <span>Delta Force, NIT Trichy</span>
-            </div>
-            <div class="experience-copy">
-              <h3>Software Developer at Delta Force</h3>
-              <p>
-                Built and maintained internal platforms for NIT Trichy as part of the institute's official software development club, serving tools used by 10,000+ students.
-              </p>
-              <ul>
-                <li>Worked on student-facing systems, including scholarship workflows, internal portals, and real-time event infrastructure.</li>
-                <li>Built backend services, admin workflows, document upload flows, filters, and reusable systems for campus-scale operations.</li>
-              </ul>
-              <p class="experience-stack experience-stack--rule">Tech stack: Go, Redis, WebSockets, React, Phaser, Tailwind CSS, PostgreSQL</p>
-            </div>
-          </article>
-        </div>
-      </section>
+  // ---- laying a drawing down ------------------------------------------------------------------------
+  // name: which drawing.  (ux, uy): where its anchor goes, in sheet units.  sc: size.  flip: mirrored.  squash: narrowed.
+  function put(name, ux, uy, sc, alpha, flip, squash) {
+    if (MUTE) return;
+    var c = CELS[name]; if (!c) return;
+    sc = sc || 1;
+    var m = K / SS * sc, dw = c[2] * m, dh = c[3] * m, X = OX + ux * K, Y = OY + uy * K, ax = c[4] * K * sc, ay = c[5] * K * sc;
+    if (X + dw < 0 || X - dw > celsC.width || Y + dh < 0 || Y - dh > celsC.height) return;
+    var faint = alpha != null && alpha < 1;
+    if (faint) cctx.globalAlpha = alpha;
+    if (flip || (squash && squash !== 1)) {
+      cctx.save(); cctx.translate(Math.round(X), Math.round(Y)); cctx.scale((flip ? -1 : 1) * (squash || 1), 1);
+      cctx.drawImage(ATLAS, c[0], c[1], c[2], c[3], -ax, -ay, dw, dh);
+      cctx.restore();
+    } else cctx.drawImage(ATLAS, c[0], c[1], c[2], c[3], Math.round(X - ax), Math.round(Y - ay), Math.round(dw), Math.round(dh));
+    if (faint) cctx.globalAlpha = 1;
+  }
+  // rings that open on the water and fade: each is { x, y, sc, n0 }
+  function drawRings(list, names, hold, n) {
+    for (var i = list.length - 1; i >= 0; i--) {
+      var g = list[i], f = Math.floor((n - g.n0) / hold);
+      if (f < 0) continue;
+      if (f >= names.length) { list.splice(i, 1); continue; }
+      put(names[f], g.x, g.y, g.sc, f === names.length - 1 ? 0.55 : 1);
+    }
+  }
 
-      <section id="projects" class="panel" aria-labelledby="projects-title">
-        <h2 id="projects-title">Projects</h2>
-        <div class="project-list">
-          <article class="project-item">
-            <div class="project-title">
-              <h3>ClaudeMonitor</h3>
-              <a href="https://github.com/kelpikz/ClaudeMonitor" target="_blank" rel="noopener noreferrer" aria-label="ClaudeMonitor GitHub repository">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-              </a>
-            </div>
-            <p>Windows tray app for tracking Claude usage limits in real time.</p>
-            <em>Python - Desktop - OAuth</em>
-          </article>
-          <article class="project-item">
-            <div class="project-title">
-              <h3>Soma</h3>
-              <a href="https://kelpikz.github.io/body-pain-explorer/" target="_blank" rel="noopener noreferrer" aria-label="Open the live Soma 3D Pain Explorer">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v8H3V5h2Z"/></svg>
-              </a>
-              <a href="https://github.com/kelpikz/body-pain-explorer" target="_blank" rel="noopener noreferrer" aria-label="Soma GitHub repository">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-              </a>
-            </div>
-            <p>Interactive 3D anatomy explorer for marking painful muscle and tendon areas and generating cautious movement guidance.</p>
-            <em>Three.js - JavaScript - Vite - WebGL</em>
-          </article>
-          <article class="project-item">
-            <div class="project-title">
-              <h3>D-Pay</h3>
-            </div>
-            <p>Festival payment platform used at NIT Trichy food stalls, with wallet transfers, real-time balances, ACID-safe transaction handling, and Rs. 18,00,000+ processed over three days.</p>
-            <em>Python - Fast API - Go - React - TypeScript - PostgreSQL</em>
-          </article>
-          <article class="project-item">
-            <div class="project-title">
-              <h3>Utopia</h3>
-            </div>
-            <p>Virtual 2D recreation of NIT Trichy for students during lockdown, with live location sharing for 100+ concurrent users, video calls, chat, and an interactive Phaser map.</p>
-            <em>Go - Redis - WebSockets - React - Phaser - Tailwind CSS</em>
-          </article>
-          <article class="project-item">
-            <div class="project-title">
-              <h3>Dalal Street</h3>
-              <a href="https://github.com/delta/dalal-street-server" target="_blank" rel="noopener noreferrer" aria-label="Dalal Street GitHub repository">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-              </a>
-            </div>
-            <p>Backend systems for Pragyan's stock market simulation, supporting real-time gameplay flows and event infrastructure built with Delta Force.</p>
-            <em>Go - Realtime Systems - Event Infrastructure</em>
-          </article>
-        </div>
-      </section>
+  // ---- the actors -----------------------------------------------------------------------------------
+  // Each maker takes the plain data of one actor and gives back a function (n, t, adv): n the frame, t its time in
+  // seconds, adv true when the frame is new (so things may move on) and false when it is only drawn again.
+  var ACT = {
+    // clouds go with the wind and come round again
+    drift: function (a) {
+      var span = a.wrap[1] - a.wrap[0];
+      return function (n, t) {
+        a.items.forEach(function (i) { var x = i.x + i.v * t - a.wrap[0]; put(i.cel, a.wrap[0] + ((x % span) + span) % span, i.y); });
+      };
+    },
+    // a star catches the eye and lets go
+    twinkle: function (a) {
+      var live = [], next = 0.4;
+      return function (n, t, adv) {
+        if (adv && t >= next) { live.push({ x: rr(a.box[0], a.box[2]), y: rr(a.box[1], a.box[3]), n0: n, seq: Math.random() < 0.3 ? [0, 1, 2, 2, 1, 0] : [0, 1, 1, 0] }); next = t + rr(a.every[0], a.every[1]); }
+        for (var i = live.length - 1; i >= 0; i--) {
+          var s = live[i], f = Math.floor((n - s.n0) / 2);
+          if (f >= s.seq.length) { live.splice(i, 1); continue; }
+          put(a.cels[s.seq[f]], s.x, s.y);
+        }
+      };
+    },
+    // cranes cross in a loose wedge, each beating in its own time
+    flock: function (a, still) {
+      var dx = a.to[0] - a.from[0], dy = a.to[1] - a.from[1], len = Math.hypot(dx, dy), birds, t0;
+      var form = function () {
+        birds = [];
+        for (var i = 0; i < a.n; i++) {
+          var rank = Math.ceil(i / 2), side = i % 2 ? 1 : -1;
+          birds.push({ back: rank * a.gap * rr(0.85, 1.15), off: side * rank * rr(15, 24) + rr(-4, 4), sc: rr(a.size[0], a.size[1]) * (i ? 1 : 1.05), ph: (Math.random() * 6) | 0, v: i % 2 });
+        }
+      };
+      form(); t0 = still ? -0.42 * len / a.speed : a.first;
+      return function (n, t, adv) {
+        if (t < t0) return;
+        var d = (t - t0) * a.speed, beat = Math.floor(n / 2);
+        if (d > len + Math.ceil(a.n / 2) * a.gap * 1.2 + 90) { if (adv) { t0 = t + rr(a.every[0], a.every[1]); form(); } return; }
+        birds.forEach(function (b) {
+          var u = (d - b.back) / len; if (u < -0.03 || u > 1.08) return;
+          var at = beat + b.ph, cyc = a.cycle[at % a.cycle.length], alt = Math.floor(at / a.cycle.length) % 2;
+          put(a.frames[cyc][(b.v + alt) % 2], a.from[0] + dx * u, a.from[1] + dy * u + a.sag * 4 * u * (1 - u) + b.off + (cyc >= 2 ? -1.5 : 1.5), b.sc);
+        });
+      };
+    },
+    // light on the water: the same marks, drawn again and again
+    boil: function (a) {
+      var cur = 0, since = 0, hold = Math.max(3, a.hold);
+      return function (n, t, adv) {
+        if (adv && ++since >= hold) { since = 0; cur = (cur + 1 + ((Math.random() * (a.cels.length - 1)) | 0)) % a.cels.length; }
+        put(a.cels[cur], a.x, a.y);
+      };
+    },
+    // rings open where something small touched the water.  A touch of the visitor makes one too.
+    rings: function (a) {
+      var next = 1.2; RINGS.length = 0; RINGS.names = a.cels; RINGS.hold = a.hold;
+      return function (n, t, adv) {
+        if (adv && t >= next && a.pts.length) { var p = pick(a.pts); RINGS.push({ x: p[0] + rr(-10, 10), y: p[1] + rr(-4, 4), sc: p[2] * rr(0.8, 1.1), n0: n }); next = t + rr(a.every[0], a.every[1]); }
+        drawRings(RINGS, a.cels, a.hold, n);
+      };
+    },
+    // geese go along the far side and back
+    swim: function (a) {
+      var L = a.x1 - a.x0;
+      return function (n, t) {
+        for (var i = a.n - 1; i >= 0; i--) {
+          var d = L * 0.38 + a.speed * t - i * a.gap; d = ((d % (2 * L)) + 2 * L) % (2 * L);
+          var back = d > L;
+          put(a.cels[(Math.floor(n / 5) + i) % 2], a.x0 + (back ? 2 * L - d : d), a.y + (i ? 7 : 0) + Math.sin(t * 1.7 + i * 2) * 0.7, a.scale * (i ? 0.92 : 1), 1, back);
+        }
+      };
+    },
+    // lamps set on the water: the flame is never the same twice
+    lamps: function (a) {
+      var st = a.pts.map(function () { return { c: (Math.random() * a.cels.length) | 0, w: (Math.random() * 3) | 0, ph: Math.random() * 6.28 }; });
+      return function (n, t, adv) {
+        a.pts.forEach(function (p, i) {
+          var s = st[i];
+          if (adv && --s.w <= 0) { s.w = a.hold + ((Math.random() * 2) | 0); s.c = (s.c + 1 + ((Math.random() * (a.cels.length - 1)) | 0)) % a.cels.length; }
+          put(a.cels[s.c], p[0], p[1] + Math.sin(t * 1.3 + s.ph) * 0.6, p[2]);
+        });
+      };
+    },
+    // a fish leaves the water and goes back into it
+    leap: function (a) {
+      var next = a.first, cur = null, rings = [];
+      return function (n, t, adv) {
+        if (adv && !cur && t >= next && a.pts.length) {
+          var p = pick(a.pts);
+          cur = { x: p[0], y: p[1], sc: p[2], dir: Math.random() < 0.5 ? 1 : -1, n0: n };
+          rings.push({ x: p[0], y: p[1], sc: p[2] * 0.8, n0: n });
+        }
+        drawRings(rings, a.rings, 2, n);
+        if (!cur) return;
+        var f = Math.floor((n - cur.n0) / 2);
+        if (f < a.cels.length) { put(a.cels[f], cur.x, cur.y, cur.sc, 1, cur.dir < 0); return; }
+        var lx = cur.x + cur.dir * a.reach * cur.sc;
+        rings.push({ x: lx, y: cur.y, sc: cur.sc, n0: n }, { x: lx, y: cur.y, sc: cur.sc * 1.15, n0: n + 3 });
+        cur = null; next = t + rr(a.every[0], a.every[1]);
+      };
+    },
+    // the boat rides a little way and comes back, and lifts on the water as it goes
+    boat: function (a) {
+      return function (n, t) {
+        put(a.cels[Math.floor(n / a.hold) % a.cels.length], a.x + a.range * Math.sin(t * 2 * Math.PI / a.period - 0.6), a.y + a.bob * Math.sin(t * 2));
+      };
+    },
+    // the lotus in front of the boat: it only breathes
+    still: function (a) { return function (n, t) { put(a.cel, a.x, a.y + a.bob * Math.sin(t * 1.4 + 1)); }; },
+    // an egret that looks round now and then
+    pose: function (a) {
+      var look = false, next = rr(a.every[0], a.every[1]);
+      return function (n, t, adv) {
+        if (adv && t >= next) { look = !look; next = t + (look ? rr(0.7, 1.8) : rr(a.every[0], a.every[1])); }
+        put(a.cels[look ? 1 : 0], a.x, a.y);
+      };
+    },
+    // butterflies: short flights, short rests
+    flutter: function (a) {
+      var B = [];
+      for (var i = 0; i < a.n; i++) { var x = rr(a.box[0], a.box[2]), y = rr(a.box[1], a.box[3]); B.push({ x: x, y: y, tx: x, ty: y, rest: (rr(0, 30)) | 0, c: i % a.cels.length, ph: (Math.random() * 4) | 0 }); }
+      return function (n, t, adv) {
+        B.forEach(function (b) {
+          var dx = b.tx - b.x, dy = b.ty - b.y, d = Math.hypot(dx, dy), moving = d >= 3;
+          if (adv) {
+            if (moving) { var v = Math.min(d, 3.2); b.x += dx / d * v + rr(-1.6, 1.6); b.y += dy / d * v + rr(-2.2, 2.2); }
+            else if (b.rest > 0) b.rest--;
+            else { b.tx = clamp(b.x + rr(-120, 120), a.box[0], a.box[2]); b.ty = rr(a.box[1], a.box[3]); b.rest = Math.random() < 0.4 ? (rr(8, 44)) | 0 : 0; }
+          }
+          put(a.cels[b.c], b.x, b.y, 1, 1, false, moving ? [1, 0.55, 0.2, 0.55][(n + b.ph) % 4] : [1, 1, 1, 0.6][(Math.floor(n / 3) + b.ph) % 4]);
+        });
+      };
+    },
+    // two parrots leave the near tree and cross low over the lake
+    pair: function (a) {
+      var dx = a.to[0] - a.from[0], dy = a.to[1] - a.from[1], len = Math.hypot(dx, dy), t0 = a.first;
+      return function (n, t, adv) {
+        if (t < t0) return;
+        var d = (t - t0) * a.speed;
+        if (d > len + 180) { if (adv) t0 = t + rr(a.every[0], a.every[1]); return; }
+        for (var i = 0; i < a.n; i++) {
+          var u = (d - i * 58) / len; if (u < 0 || u > 1.06) continue;
+          put(a.cels[(n + i) % 2], a.from[0] + dx * u, a.from[1] + dy * u + a.sag * 4 * u * (1 - u) + i * 14 + ((n + i) % 2 ? -2 : 2), i ? 0.9 : 1);
+        }
+      };
+    },
+    // fireflies: they wander, light, and go dark
+    blink: function (a) {
+      var F = [];
+      a.zones.forEach(function (z, zi) {
+        for (var i = 0; i < a.n[zi]; i++) { var on = Math.random() < 0.35; F.push({ z: z, x: rr(z[0], z[2]), y: rr(z[1], z[3]), vx: rr(-0.5, 0.5), vy: rr(-0.3, 0.3), on: on ? 3 : -1, len: 14, wait: (rr(0, 50)) | 0 }); }
+      });
+      return function (n, t, adv) {
+        F.forEach(function (f) {
+          if (adv) {
+            f.x += f.vx + rr(-0.3, 0.3); f.y += f.vy + rr(-0.25, 0.25);
+            if (f.x < f.z[0] || f.x > f.z[2]) f.vx = -f.vx;
+            if (f.y < f.z[1] || f.y > f.z[3]) f.vy = -f.vy;
+            if (f.on < 0) { if (--f.wait <= 0) { f.on = 0; f.len = (rr(8, 22)) | 0; } }
+            else if (++f.on >= f.len) { f.on = -1; f.wait = (rr(10, 60)) | 0; }
+          }
+          if (f.on >= 0) put(a.cels[f.on < 2 || f.on >= f.len - 2 ? 1 : 0], f.x, f.y);
+        });
+      };
+    }
+  };
 
-      <section id="contact" class="contact-strip" aria-label="Contact links">
-        <a href="https://github.com/kelpikz" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ajitha-prasad-y/" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.62h3.96V21H3V9.62Zm6.18 0h3.79v1.55h.05c.53-.95 1.82-1.95 3.74-1.95 4 0 4.74 2.63 4.74 6.06V21h-3.95v-5.08c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68V21H9.18V9.62Z"/></svg>
-          LinkedIn
-        </a>
-        <a href="assets/Ajitha_Prasad_Resume_Website.pdf">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.75h8.35L19 7.4v13.85H6V2.75Zm7.5 1.75v3.75h3.75L13.5 4.5ZM7.75 4.5v15h9.5v-9.75H12V4.5h-4.25Zm2 8h5.5V14h-5.5v-1.5Zm0 3h5.5V17h-5.5v-1.5Z"/></svg>
-          Resume
-        </a>
-      </section>
-    </main>
+  function drawCels(adv) {
+    cctx.clearRect(0, 0, celsC.width, celsC.height);
+    var t = tick * TICK;
+    for (var i = 0; i < actors.length; i++) actors[i](tick, t, adv);
+  }
 
-    <script src="script.js?v=27"></script>
-    <script data-goatcounter="https://kelpikz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  </body>
+  // put a scene on the two lower sheets, and its actors at their first places
+  function showScene(sc) {
+    scene = sc; mood = sc.mood; CELS = sc.man.cels; ATLAS = sc.atlas; SS = sc.man.S;
+    body.dataset.mood = mood;
+    moodBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mood === mood)); });
+    mapScene(sc.man); drawPaint();
+    actors = sc.man.actors.slice().sort(function (p, q) { return p.z - q.z; }).map(function (a) { return ACT[a.type] ? ACT[a.type](a, !wantPlay) : null; }).filter(Boolean);
+    tick = 0; acc = 0; drawCels(false);
+  }
+  function setInk() { body.dataset.ink = mood === 'night' ? 'light' : 'dark'; if (scene && scene.man.skyc) theme.setAttribute('content', scene.man.skyc); }
+
+  // ---- the clock --------------------------------------------------------------------------------------
+  var filming = query.has('film');                       // the clock is then moved by hand (LAKE.step), to record it
+  function advance(dt) {
+    if (scrib) scribStep(dt);
+    if (playing) { acc += dt; if (acc >= TICK) { acc %= TICK; tick++; drawCels(true); } }
+  }
+  function frame(now) {
+    raf = 0;
+    var dt = Math.min(0.12, Math.max(0, (now - last) / 1000)); last = now;
+    advance(dt);
+    if (scrib || playing) raf = requestAnimationFrame(frame);
+  }
+  function run() { if (!raf && !filming) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+
+  // ---- the arrival: the top sheet is rubbed away with the side of a stick ---------------------------------
+  // A ribbon of chalk grain: solid along its middle, streaked and broken toward its edges.  It repeats along x.
+  var texCache = {};
+  function streakTex(h) {
+    if (texCache[h]) return texCache[h];
+    var w = 512, c = document.createElement('canvas'); c.width = w; c.height = h;
+    var g = c.getContext('2d'), im = g.createImageData(w, h), d = im.data;
+    var gx = 8, cell = 3, gy = Math.ceil(h / cell) + 2, lat = new Float32Array(gx * gy), i, x, y;
+    for (i = 0; i < lat.length; i++) lat[i] = Math.random();
+    for (y = 0; y < h; y++) {
+      var fy = y / cell, iy = Math.floor(fy), ty = fy - iy, v = Math.abs(y - h / 2) / (h / 2);
+      for (x = 0; x < w; x++) {
+        var fx = x / (w / gx), ix = Math.floor(fx), tx = fx - ix; tx = tx * tx * (3 - 2 * tx);
+        var i0 = ix % gx, i1 = (ix + 1) % gx;
+        var s = (lat[i0 + iy * gx] * (1 - tx) + lat[i1 + iy * gx] * tx) * (1 - ty) + (lat[i0 + (iy + 1) * gx] * (1 - tx) + lat[i1 + (iy + 1) * gx] * tx) * ty;
+        var al = clamp((0.86 - v + (s - 0.5) * 0.5) / 0.3, 0, 1) * Math.min(1, (1 - v) / 0.06), gr = Math.random();
+        al *= gr < 0.07 + 0.2 * v ? 0.3 : 0.66 + 0.34 * gr;
+        d[(y * w + x) * 4 + 3] = Math.round(al * 255);
+      }
+    }
+    g.putImageData(im, 0, 0);
+    return (texCache[h] = c);
+  }
+  function startScribble(done) {
+    var H = veil.height, step = H / 12, hb = Math.round(step * 3.3);
+    scrib = { W: veil.width, H: H, step: step, hb: hb, tex: streakTex(hb), i: 0, f: 0, n: Math.ceil(H / step + 1.6), dur: 0.17, rows: 22, lag: null, done: done };
+    return scrib;
+  }
+  // One pass goes across and a little down.  The ribbon is laid in thin rows, and each row trails the hand by its own
+  // amount, so the stroke ends in a ragged edge and not in a straight cut.  Rows are laid in cells of CELL pixels.
+  var CELL = 16;
+  function newPass(s) {
+    var dir = s.i % 2 ? -1 : 1, max = s.hb * 0.42, v = Math.random(), j;
+    s.dir = dir; s.over = max + 20; s.xa = dir > 0 ? -s.over : s.W + s.over; s.xb = dir > 0 ? s.W + s.over : -s.over;
+    s.lag = []; s.lx = [];
+    for (j = 0; j < s.rows; j++) {
+      v = clamp(v + rr(-0.4, 0.4), 0, 1);
+      s.lag.push(max * (0.3 * Math.random() + 0.7 * v));
+      s.lx.push(dir > 0 ? Math.floor(s.xa / CELL) : Math.ceil(s.xa / CELL));
+    }
+    s.off = CELL * ((Math.random() * 32) | 0); s.ph = Math.random() * 6;
+  }
+  function layCell(s, j, c) {
+    var l = c * CELL, tw = s.tex.width;
+    if (l + CELL <= 0 || l >= s.W) return;
+    var e = (l + CELL / 2 - s.xa) / (s.xb - s.xa), top = Math.round((s.i - 0.8) * s.step + s.step * e + Math.sin(e * 5 + s.ph) * s.step * 0.1 - s.hb / 2);
+    var r0 = Math.floor(j * s.hb / s.rows), r1 = Math.floor((j + 1) * s.hb / s.rows);
+    vctx.drawImage(s.tex, ((l + s.off) % tw + tw) % tw, r0, CELL, r1 - r0, l, top + r0, CELL, r1 - r0);
+  }
+  function scribStep(dt) {
+    var s = scrib, left = dt, j, tgt;
+    vctx.globalCompositeOperation = 'destination-out';
+    while (left > 1e-6 && s.i < s.n) {
+      if (!s.lag) newPass(s);
+      var adv = Math.min(left / s.dur, 1 - s.f); s.f += adv; left -= adv * s.dur;
+      var end = s.f >= 1 - 1e-6, head = s.xa + (s.xb - s.xa) * (0.5 - 0.5 * Math.cos(Math.PI * Math.min(1, s.f)));
+      for (j = 0; j < s.rows; j++) {
+        if (s.dir > 0) { tgt = end ? Math.ceil(s.xb / CELL) : Math.floor((head - s.lag[j]) / CELL); while (s.lx[j] < tgt) layCell(s, j, s.lx[j]++); }
+        else { tgt = end ? Math.floor(s.xb / CELL) : Math.ceil((head + s.lag[j]) / CELL); while (s.lx[j] > tgt) layCell(s, j, --s.lx[j]); }
+      }
+      if (end) { s.i++; s.f = 0; s.lag = null; }
+    }
+    vctx.globalCompositeOperation = 'source-over';
+    if (s.i >= s.n) endScribble();
+  }
+  function endScribble() {
+    var s = scrib; scrib = null;
+    veil.style.transition = 'opacity .5s ease'; veil.style.opacity = '0';
+    setTimeout(function () { if (!scrib) vctx.clearRect(0, 0, veil.width, veil.height); if (s && s.done) s.done(); }, 520);
+  }
+  function dropVeil() { scrib = null; veil.style.transition = 'none'; veil.style.opacity = '0'; vctx.clearRect(0, 0, veil.width, veil.height); busy = false; }
+
+  // the new scene goes under the top sheet, already moving, and the sheet is rubbed away
+  function reveal(sc) {
+    showScene(sc);
+    playing = wantPlay;
+    var s = startScribble(function () { busy = false; });
+    var box = (mode === 'full' ? words : title).getBoundingClientRect(), top = picture.getBoundingClientRect().top;
+    var mid = (box.top + box.height / 2 - top) * dpr;
+    setTimeout(setInk, clamp((mid / s.step + 0.8) * s.dur, 0.1, s.n * s.dur) * 1000);
+    run();
+  }
+  function plain(sc) { showScene(sc); setInk(); dropVeil(); playing = wantPlay; if (playing) run(); }
+
+  function switchMood(m, btn) {
+    if (busy || !scene || m === mood) return;
+    busy = true; btn.setAttribute('aria-busy', 'true');
+    loadScene(m, fmt).then(function (sc) {
+      btn.removeAttribute('aria-busy');
+      if (reduce.matches || !wantPlay) { plain(sc); return; }
+      vctx.globalCompositeOperation = 'source-over';
+      vctx.clearRect(0, 0, veil.width, veil.height); vctx.drawImage(paint, 0, 0); vctx.drawImage(celsC, 0, 0);   // the old picture is the sheet now
+      veil.style.transition = 'none'; veil.style.opacity = '1'; void veil.offsetWidth;
+      reveal(sc);
+    }, function () { btn.removeAttribute('aria-busy'); busy = false; });
+  }
+
+  // ---- start ----------------------------------------------------------------------------------------------
+  layout();
+  var man0 = SC[mood + '-' + fmt];
+  if (man0.paper) document.documentElement.style.setProperty('--paper', man0.paper);
+  moodBtns.forEach(function (b) {
+    b.setAttribute('aria-pressed', String(b.dataset.mood === mood));
+    b.addEventListener('click', function () { switchMood(b.dataset.mood, b); });
+  });
+  var syncPause = function () { pauseBtn.textContent = wantPlay ? 'Pause' : 'Play'; };
+  syncPause();
+  pauseBtn.addEventListener('click', function () { wantPlay = !wantPlay; syncPause(); playing = wantPlay && !!scene; if (playing) run(); });
+
+  var first = loadScene(mood, fmt);
+  if (reduce.matches) first.then(plain, function () {});
+  else {
+    // the first lines come up on the paper, and stay a moment
+    var lines = img(man0.sketch).then(function (s) {
+      if (SC[mood + '-' + fmt] !== man0) return;                               // the window changed shape meanwhile
+      mapScene(man0);
+      vctx.fillStyle = man0.paper || '#ece2c7'; vctx.fillRect(0, 0, veil.width, veil.height);
+      vctx.drawImage(s, OX, OY, Math.round(man0.w * K), Math.round(man0.h * K));
+      veil.style.transition = 'opacity .5s ease'; veil.style.opacity = '1';
+      return new Promise(function (res) { setTimeout(res, 780); });
+    }, function () {});
+    Promise.all([first, lines]).then(function (r) {
+      if (r[0].fmt !== fmt) { loadScene(mood, fmt).then(plain); return; }
+      if (veil.style.opacity !== '1') { plain(r[0]); return; }
+      reveal(r[0]);
+    }, function () {});
+  }
+
+  // a touch on the water
+  picture.addEventListener('pointerdown', function (e) {
+    if (!scene || !playing || !RINGS.names) return;
+    var r = picture.getBoundingClientRect(), ux = (e.clientX - r.left - ox) / k, uy = (e.clientY - r.top - oy) / k, w = scene.man.water;
+    if (uy < w[0] || uy > w[1]) return;
+    var sc = 0.58 + 0.72 * (uy - w[0]) / (w[1] - w[0]);
+    RINGS.push({ x: ux, y: uy, sc: sc, n0: tick }, { x: ux, y: uy, sc: sc * 1.2, n0: tick + 4 });
+  });
+
+  // the window changes shape
+  var rz = 0, lastW = document.documentElement.clientWidth, lastH = window.innerHeight;
+  function relayout() {
+    var vw = document.documentElement.clientWidth, vh = window.innerHeight;
+    if (mode === 'stack' && vw === lastW && Math.abs(vh - lastH) < 170) return;      // a phone hiding its address bar
+    lastW = vw; lastH = vh;
+    var f0 = fmt; layout();
+    if (!scene) return;
+    if (scrib || veil.style.opacity === '1') dropVeil();
+    if (fmt !== f0) loadScene(mood, fmt).then(function (sc) { if (sc.fmt === fmt) plain(sc); });
+    else { mapScene(scene.man); drawPaint(); drawCels(false); }
+  }
+  window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(relayout, 140); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { lastW = -1; relayout(); });
+
+  // for looking at it from outside: run on n frames at once, or finish the arrival now
+  window.LAKE = {
+    seek: function (n) { if (!scene) return; MUTE = true; for (var i = 1; i < n; i++) { tick++; drawCels(true); } MUTE = false; tick++; drawCels(true); },
+    step: function (dt) { advance(dt); },
+    skip: function () { if (scrib) { vctx.clearRect(0, 0, veil.width, veil.height); endScribble(); } },
+    state: function () { return { mood: mood, fmt: fmt, mode: mode, tick: tick, busy: busy, playing: playing, scribbling: !!scrib, box: [bw, bh], k: k, dpr: dpr }; }
+  };
+})();
+</script>
+</body>
 </html>
