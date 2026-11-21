@@ -1,475 +1,442 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Screenshots, videos and notes for the projects of Ajitha Prasad: open-transcribe, Shelf, ClaudeMonitor, D-Pay and Utopia.">
-    <meta property="og:title" content="Projects - Ajitha Prasad">
-    <meta property="og:description" content="Screenshots, videos and notes for open-transcribe, Shelf, ClaudeMonitor, D-Pay and Utopia.">
-    <meta property="og:type" content="website">
-    <title>Projects - Ajitha Prasad</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=28">
-    <link rel="stylesheet" href="projects.css?v=4">
-    <!-- PROTOTYPE: remove the next line and the prototype script below after a variant is picked -->
-    <link rel="stylesheet" href="projects.prototype.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="index.html#experience">Experience</a>
-        <a class="is-active" href="projects.html" aria-current="page">Projects</a>
-      </nav>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects - Ajitha Prasad</title>
+<meta name="description" content="Projects of Ajitha Prasad: Shelf, open-transcribe, ClaudeMonitor, D-Pay, Utopia and Dalal Street.">
+<meta property="og:title" content="Projects - Ajitha Prasad">
+<meta property="og:description" content="Projects of Ajitha Prasad: Shelf, open-transcribe, ClaudeMonitor, D-Pay, Utopia and Dalal Street.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#b3301f" id="theme">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239fcbe0'/%3E%3Ccircle cx='21' cy='11' r='5' fill='%23f2a51f'/%3E%3Cpath d='M0 20h32v6a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z' fill='%2327357f'/%3E%3Cpath d='M7 22h15c0 3-3 5-7.5 5S7 25 7 22z' fill='%23d5432a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="projects.css">
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body data-mood="day">
 
-      <div class="socials" aria-label="Social links">
-        <a href="https://github.com/kelpikz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/ajitha-prasad-y/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.62h3.96V21H3V9.62Zm6.18 0h3.79v1.55h.05c.53-.95 1.82-1.95 3.74-1.95 4 0 4.74 2.63 4.74 6.06V21h-3.95v-5.08c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68V21H9.18V9.62Z"/></svg>
-        </a>
-        <a href="assets/Ajitha_Prasad_Resume_Website.pdf" aria-label="Resume">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.75h8.35L19 7.4v13.85H6V2.75Zm7.5 1.75v3.75h3.75L13.5 4.5ZM7.75 4.5v15h9.5v-9.75H12V4.5h-4.25Zm2 8h5.5V14h-5.5v-1.5Zm0 3h5.5V17h-5.5v-1.5Z"/></svg>
-        </a>
+<header class="top" id="top">
+  <a class="home tab" href="index.html">Ajitha Prasad</a>
+  <div class="tools tab" id="tools">
+    <div class="moods" role="group" aria-label="Time of day in the picture">
+      <button type="button" data-mood="day" aria-pressed="false">Day</button>
+      <button type="button" data-mood="dusk" aria-pressed="false">Dusk</button>
+      <button type="button" data-mood="night" aria-pressed="false">Night</button>
+    </div>
+    <button type="button" id="pause">Pause</button>
+  </div>
+</header>
+
+<!-- The floor of a painter's room, seen from above.  The picture is drawn by make.mjs (place "floor"); the folios are
+     laid on it by projects.js at the places the picture was drawn for. -->
+<main class="room" id="room">
+  <div class="picture" id="picture" role="img" aria-label="A painter's floor seen from above, drawn in pastel in the manner of Mewar painting: an indigo rug with a gold sun at its centre, pigments in shells, a bowl of water, brushes, a peacock feather, a clay lamp, and a cat asleep in the light from the window. Six painted folios lie on the rug, one for each project.">
+    <canvas class="layer" id="sketch"></canvas>
+    <canvas class="layer" id="paint"></canvas>
+    <canvas class="layer" id="under"></canvas>
+  </div>
+
+  <div class="slip" id="slip"><h1>Projects</h1></div>
+
+  <ul class="floor-list" id="list">
+    <li><a class="fo" href="#shelf" data-id="shelf">
+      <span class="fo-in">
+        <span class="fo-name">Shelf</span>
+        <span class="fo-foot"><span class="fo-tag">A small self-hosted home for static files</span> <span class="fo-year">2026</span></span>
+        <img class="fo-img" src="assets/folio-shelf.webp" alt="A painting of a weaver bird at the door of its hanging nest" width="900" height="750">
+      </span>
+    </a></li>
+    <li><a class="fo" href="#open-transcribe" data-id="open-transcribe">
+      <span class="fo-in">
+        <span class="fo-name">open-transcribe</span>
+        <span class="fo-foot"><span class="fo-tag">Speech-to-text in any Windows app</span> <span class="fo-year">2026</span></span>
+        <img class="fo-img" src="assets/folio-open-transcribe.webp" alt="A painting of a green parrot on a flowering branch" width="900" height="750">
+      </span>
+    </a></li>
+    <li><a class="fo" href="#claudemonitor" data-id="claudemonitor">
+      <span class="fo-in">
+        <span class="fo-name">ClaudeMonitor</span>
+        <span class="fo-foot"><span class="fo-tag">Claude and Codex limits in the Windows taskbar</span> <span class="fo-year">2026</span></span>
+        <img class="fo-img" src="assets/folio-claudemonitor.webp" alt="A painting of an owl keeping watch at night" width="900" height="750">
+      </span>
+    </a></li>
+    <li><a class="fo" href="#dpay" data-id="dpay">
+      <span class="fo-in">
+        <span class="fo-name">D-Pay</span>
+        <span class="fo-foot"><span class="fo-tag">Cashless food stalls for Nittfest '23</span> <span class="fo-year">2023</span></span>
+        <img class="fo-img" src="assets/folio-dpay.webp" alt="A painting of a decorated elephant on a festival day" width="900" height="750">
+      </span>
+    </a></li>
+    <li><a class="fo" href="#utopia" data-id="utopia">
+      <span class="fo-in">
+        <span class="fo-name">Utopia</span>
+        <span class="fo-foot"><span class="fo-tag">Our campus online during the lockdown</span> <span class="fo-year">2022</span></span>
+        <img class="fo-img" src="assets/folio-utopia.webp" alt="A painting of a peacock dancing in the monsoon rain" width="900" height="750">
+      </span>
+    </a></li>
+    <li><a class="fo" href="#dalal-street" data-id="dalal-street">
+      <span class="fo-in">
+        <span class="fo-name">Dalal Street</span>
+        <span class="fo-foot"><span class="fo-tag">The stock market game of Pragyan</span></span>
+        <img class="fo-img" src="assets/folio-dalal-street.webp" alt="A painting of a decorated bull climbing a hill" width="900" height="750">
+      </span>
+    </a></li>
+  </ul>
+
+  <canvas class="layer over" id="glow"></canvas>
+  <canvas class="layer over" id="shade"></canvas>
+  <canvas class="layer over" id="topc"></canvas>
+  <div class="dado" id="dado"></div>
+</main>
+
+<!-- One article for each project.  With scripts on, projects.js shows one at a time in the dialog. -->
+<div class="store" id="folios">
+
+  <article class="folio" id="shelf" aria-labelledby="shelf-title">
+    <div class="post-left">
+      <figure class="viewer">
+        <div class="stage"><img src="assets/projects/shelf/admin.webp" alt="Admin page" width="1120" height="700" loading="lazy"></div>
+        <figcaption>The Admin page: manage sites and CLI keys in one place.</figcaption>
+        <ul class="thumbs" aria-label="Pictures of Shelf">
+          <li><a href="assets/projects/shelf/admin.webp" data-w="1120" data-h="700" data-cap="The Admin page: manage sites and CLI keys in one place." aria-current="true"><img src="assets/projects/shelf/admin-t.webp" alt="Admin page" width="320" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/shelf/sites.webp" data-w="1600" data-h="900" data-cap="Make each site public or private. Archive it or delete it."><img src="assets/projects/shelf/sites-t.webp" alt="List of sites with their controls" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/shelf/keys.webp" data-w="1600" data-h="900" data-cap="Each computer that runs shelf login gets a key for 30 days."><img src="assets/projects/shelf/keys-t.webp" alt="CLI keys" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/shelf/index.webp" data-w="800" data-h="500" data-cap="The Index page lists the public sites."><img src="assets/projects/shelf/index-t.webp" alt="Index page" width="320" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/shelf/site.webp" data-w="1280" data-h="800" data-cap="Shelf serves each site as static files."><img src="assets/projects/shelf/site-t.webp" alt="A sample static site" width="320" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/shelf/login.webp" data-w="960" data-h="600" data-cap="Only the Owner can log in, with GitHub."><img src="assets/projects/shelf/login-t.webp" alt="Login page" width="320" height="200" loading="lazy"></a></li>
+        </ul>
+      </figure>
+    </div>
+
+    <div class="post-right">
+      <header class="folio-head">
+        <div class="band">
+          <h2 id="shelf-title" tabindex="-1">Shelf</h2>
+          <p class="folio-tag">A small self-hosted home for static files</p>
+        </div>
+        <span class="stamp-wrap"><span class="stamp" role="img" aria-label="A painting of a weaver bird at the door of its hanging nest" style="--src: url(assets/folio-shelf.webp)"></span></span>
+      </header>
+
+      <div class="facts">
+        <p class="lead">A small, self-hosted place for static files. One command puts a folder online at a path. The Owner decides which sites are public.</p>
+        <ul class="lines">
+          <li class="kv"><span class="k">Date</span><span>October to November 2026</span></li>
+          <li class="kv"><span class="k">Role</span><span>Solo: design and code</span></li>
+          <li class="kv"><span class="k">Status</span><span>Live at files.ajitha.fyi</span></li>
+          <li class="kv"><span class="k">Runs as</span><span>One Go process, one SQLite file, one Docker image</span></li>
+          <li class="kv"><span class="k">Built with</span><span>Go, SQLite, Rust CLI, Docker, MCP</span></li>
+        </ul>
+        <p class="go"><a href="https://files.ajitha.fyi">Open Shelf</a> <a href="https://github.com/kelpikz/shelf">Code</a></p>
       </div>
-    </header>
 
-    <main id="top" class="page">
-      <nav class="pj-picker" aria-label="Projects" data-picker></nav>
-
-      <!-- OPEN-TRANSCRIBE -->
-      <section id="open-transcribe" class="pj" data-name="open-transcribe" data-tagline="speech-to-text in any Windows app" aria-labelledby="ot-title">
-        <nav class="pj-crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span aria-hidden="true">/</span>
-          <a href="index.html#projects">Projects</a><span aria-hidden="true">/</span>
-          <span>Side project</span>
-        </nav>
-        <div class="pj-titlebar">
-          <h1 id="ot-title">open-transcribe</h1>
-          <p class="pj-count" data-count></p>
+      <section class="about" aria-labelledby="shelf-about">
+        <h3 id="shelf-about">About this project</h3>
+        <div class="feat">
+          <h4>One command to upload</h4>
+          <p><code>shelf upload ./notes notes</code> puts a folder online. Before the upload, the CLI finds broken links and secrets.</p>
         </div>
-
-        <div class="pj-top">
-          <div class="pj-viewer" data-gallery>
-            <div class="pj-stage" data-stage></div>
-            <div class="pj-strip">
-              <button class="pj-thumb pj-thumb--video" type="button" data-video data-src="assets/projects/open-transcribe/trailer.mp4" data-poster="assets/projects/open-transcribe/poster.webp" data-cap="Trailer: hold the keys, speak, and the text appears."><img src="assets/projects/open-transcribe/poster-t.webp" alt="open-transcribe trailer" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/open-transcribe/overlay-states.webp" data-cap="The overlay pill: opening, recording, converting, and an error."><img src="assets/projects/open-transcribe/overlay-states-t.webp" alt="Four states of the recording overlay" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/open-transcribe/settings.webp" data-cap="Settings: the shortcut, the language, the microphone and the paste mode."><img src="assets/projects/open-transcribe/settings-t.webp" alt="Settings window" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/open-transcribe/test.webp" data-cap="A test recording shows the text before you use the app."><img src="assets/projects/open-transcribe/test-t.webp" alt="Settings window with a test result" loading="lazy"></button>
-            </div>
-            <div class="pj-scrub">
-              <button type="button" data-prev aria-label="Previous screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <div class="pj-track" aria-hidden="true"><span></span></div>
-              <button type="button" data-next aria-label="Next screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-            <p class="pj-cap" aria-live="polite"><span data-cap-text></span><span data-cap-count></span></p>
-          </div>
-
-          <aside class="pj-info" aria-label="open-transcribe facts">
-            <img class="pj-capsule" src="assets/projects/open-transcribe/poster.webp" alt="" loading="lazy">
-            <p class="pj-lead">Speech-to-text for Windows. Hold Ctrl+Shift+Space, speak, and your words appear in any app. It uses your ChatGPT plan, so you do not need an API key.</p>
-            <dl class="pj-facts">
-              <div><dt>Date</dt><dd>August to November 2026</dd></div>
-              <div><dt>Role</dt><dd>Solo: design and code</dd></div>
-              <div><dt>Platform</dt><dd>Windows</dd></div>
-              <div><dt>Cost</dt><dd>No API key, no charge for each minute</dd></div>
-            </dl>
-            <div class="pj-tags">
-              <p>Built with</p>
-              <div class="stack-list">
-                <span class="stack-item"><span class="stack-glyph">Ta</span>Tauri 2</span>
-                <span class="stack-item"><span class="stack-glyph">Rs</span>Rust</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy">TypeScript</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg" alt="" loading="lazy">Bun</span>
-              </div>
-            </div>
-            <div class="pj-links">
-              <a class="hero-cta" href="https://github.com/kelpikz/open-transcribe/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
-              <a class="hero-cta" href="https://github.com/kelpikz/open-transcribe" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
-          </aside>
+        <div class="feat">
+          <h4>Public, private or archived</h4>
+          <p>A new site is private. Make it public to show it on the Index page. Archive takes it offline and keeps the files.</p>
         </div>
-
-        <div class="pj-queue" data-queue></div>
-
-        <div class="pj-about">
-          <h2>About this project</h2>
-          <div class="pj-features">
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/open-transcribe/poster.webp" alt="" loading="lazy"></div>
-              <h3>Hold, speak, release</h3>
-              <p>Hold the shortcut in any app and speak. Release the keys, and the text goes where your cursor is.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot" style="--pos: 50% 30%"><img src="assets/projects/open-transcribe/overlay-states.webp" alt="" loading="lazy"></div>
-              <h3>A small overlay</h3>
-              <p>A pill at the bottom of the screen shows the time, a live waveform and errors.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/open-transcribe/test.webp" alt="" loading="lazy"></div>
-              <h3>Uses the plan you have</h3>
-              <p>Sign in with <code>codex login</code>. The app uses the same transcription as the microphone button in the Codex desktop app.</p>
-            </article>
-          </div>
-          <p class="pj-note">Screens and the trailer use demo text.</p>
+        <div class="feat">
+          <h4>A key for each computer</h4>
+          <p>The CLI logs in through the browser, like <code>gh auth login</code>. You can cancel each key from the Admin page.</p>
         </div>
+        <p class="note">Screens use demo sites and a demo Owner.</p>
       </section>
 
-      <!-- SHELF -->
-      <section id="shelf" class="pj" data-name="Shelf" data-tagline="a small self-hosted home for static files" aria-labelledby="shelf-title" hidden>
-        <nav class="pj-crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span aria-hidden="true">/</span>
-          <a href="index.html#projects">Projects</a><span aria-hidden="true">/</span>
-          <span>Side project</span>
-        </nav>
-        <div class="pj-titlebar">
-          <h1 id="shelf-title">Shelf</h1>
-          <p class="pj-count" data-count></p>
+      <nav class="turn" aria-label="More projects">
+        <a href="#open-transcribe"><span>Next:</span> open-transcribe</a>
+      </nav>
+    </div>
+  </article>
+
+  <article class="folio" id="open-transcribe" aria-labelledby="open-transcribe-title">
+    <div class="post-left">
+      <figure class="viewer">
+        <div class="stage"><video controls playsinline preload="none" poster="assets/projects/open-transcribe/poster.webp" src="assets/projects/open-transcribe/trailer.mp4"></video></div>
+        <figcaption>Trailer: hold the keys, speak, and the text appears.</figcaption>
+        <ul class="thumbs" aria-label="Pictures of open-transcribe">
+          <li><a href="assets/projects/open-transcribe/trailer.mp4" data-video data-poster="assets/projects/open-transcribe/poster.webp" data-cap="Trailer: hold the keys, speak, and the text appears." aria-current="true"><img src="assets/projects/open-transcribe/poster-t.webp" alt="open-transcribe trailer" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/open-transcribe/overlay-states.webp" data-w="1000" data-h="625" data-cap="The overlay pill: opening, recording, converting, and an error."><img src="assets/projects/open-transcribe/overlay-states-t.webp" alt="Four states of the recording overlay" width="320" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/open-transcribe/settings.webp" data-w="649" data-h="1000" data-cap="Settings: the shortcut, the language, the microphone and the paste mode."><img src="assets/projects/open-transcribe/settings-t.webp" alt="Settings window" width="130" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/open-transcribe/test.webp" data-w="649" data-h="1000" data-cap="A test recording shows the text before you use the app."><img src="assets/projects/open-transcribe/test-t.webp" alt="Settings window with a test result" width="130" height="200" loading="lazy"></a></li>
+        </ul>
+      </figure>
+    </div>
+
+    <div class="post-right">
+      <header class="folio-head">
+        <div class="band">
+          <h2 id="open-transcribe-title" tabindex="-1">open-transcribe</h2>
+          <p class="folio-tag">Speech-to-text in any Windows app</p>
         </div>
+        <span class="stamp-wrap"><span class="stamp" role="img" aria-label="A painting of a green parrot on a flowering branch" style="--src: url(assets/folio-open-transcribe.webp)"></span></span>
+      </header>
 
-        <div class="pj-top">
-          <div class="pj-viewer" data-gallery>
-            <div class="pj-stage" data-stage></div>
-            <div class="pj-strip">
-              <button class="pj-thumb" type="button" data-src="assets/projects/shelf/admin.webp" data-cap="The Admin page: manage sites and CLI keys in one place."><img src="assets/projects/shelf/admin-t.webp" alt="Admin page" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/shelf/sites.webp" data-cap="Make each site public or private. Archive it or delete it."><img src="assets/projects/shelf/sites-t.webp" alt="List of sites with their controls" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/shelf/keys.webp" data-cap="Each computer that runs shelf login gets a key for 30 days."><img src="assets/projects/shelf/keys-t.webp" alt="CLI keys" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/shelf/index.webp" data-cap="The Index page lists the public sites."><img src="assets/projects/shelf/index-t.webp" alt="Index page" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/shelf/site.webp" data-cap="Shelf serves each site as static files."><img src="assets/projects/shelf/site-t.webp" alt="A sample static site" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/shelf/login.webp" data-cap="Only the Owner can log in, with GitHub."><img src="assets/projects/shelf/login-t.webp" alt="Login page" loading="lazy"></button>
-            </div>
-            <div class="pj-scrub">
-              <button type="button" data-prev aria-label="Previous screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <div class="pj-track" aria-hidden="true"><span></span></div>
-              <button type="button" data-next aria-label="Next screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-            <p class="pj-cap" aria-live="polite"><span data-cap-text></span><span data-cap-count></span></p>
-          </div>
+      <div class="facts">
+        <p class="lead">Speech-to-text for Windows. Hold Ctrl+Shift+Space, speak, and your words appear in any app. It uses your ChatGPT plan, so you do not need an API key.</p>
+        <ul class="lines">
+          <li class="kv"><span class="k">Date</span><span>August to November 2026</span></li>
+          <li class="kv"><span class="k">Role</span><span>Solo: design and code</span></li>
+          <li class="kv"><span class="k">Platform</span><span>Windows</span></li>
+          <li class="kv"><span class="k">Cost</span><span>No API key, no charge for each minute</span></li>
+          <li class="kv"><span class="k">Built with</span><span>Tauri 2, Rust, TypeScript, Bun</span></li>
+        </ul>
+        <p class="go"><a href="https://github.com/kelpikz/open-transcribe/releases/latest">Download</a> <a href="https://github.com/kelpikz/open-transcribe">Code</a></p>
+      </div>
 
-          <aside class="pj-info" aria-label="Shelf facts">
-            <img class="pj-capsule" src="assets/projects/shelf/sites.webp" alt="" loading="lazy">
-            <p class="pj-lead">A small, self-hosted place for static files. One command puts a folder online at a path. The Owner decides which sites are public.</p>
-            <dl class="pj-facts">
-              <div><dt>Date</dt><dd>October to November 2026</dd></div>
-              <div><dt>Role</dt><dd>Solo: design and code</dd></div>
-              <div><dt>Status</dt><dd>Live at files.ajitha.fyi</dd></div>
-              <div><dt>Runs as</dt><dd>One Go process, one SQLite file, one Docker image</dd></div>
-            </dl>
-            <div class="pj-tags">
-              <p>Built with</p>
-              <div class="stack-list">
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="" loading="lazy">Go</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="" loading="lazy">SQLite</span>
-                <span class="stack-item"><span class="stack-glyph">Rs</span>Rust CLI</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" loading="lazy">Docker</span>
-                <span class="stack-item"><span class="stack-glyph">MCP</span>MCP</span>
-              </div>
-            </div>
-            <div class="pj-links">
-              <a class="hero-cta" href="https://files.ajitha.fyi" target="_blank" rel="noopener noreferrer">Open Shelf</a>
-              <a class="hero-cta" href="https://github.com/kelpikz/shelf" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
-          </aside>
+      <section class="about" aria-labelledby="open-transcribe-about">
+        <h3 id="open-transcribe-about">About this project</h3>
+        <div class="feat">
+          <h4>Hold, speak, release</h4>
+          <p>Hold the shortcut in any app and speak. Release the keys, and the text goes where your cursor is.</p>
         </div>
-
-        <div class="pj-queue" data-queue></div>
-
-        <div class="pj-about">
-          <h2>About this project</h2>
-          <div class="pj-features">
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/shelf/site.webp" alt="" loading="lazy"></div>
-              <h3>One command to upload</h3>
-              <p><code>shelf upload ./notes notes</code> puts a folder online. Before the upload, the CLI finds broken links and secrets.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/shelf/sites.webp" alt="" loading="lazy"></div>
-              <h3>Public, private or archived</h3>
-              <p>A new site is private. Make it public to show it on the Index page. Archive takes it offline and keeps the files.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/shelf/keys.webp" alt="" loading="lazy"></div>
-              <h3>A key for each computer</h3>
-              <p>The CLI logs in through the browser, like <code>gh auth login</code>. You can cancel each key from the Admin page.</p>
-            </article>
-          </div>
-          <p class="pj-note">Screens use demo sites and a demo Owner.</p>
+        <div class="feat">
+          <h4>A small overlay</h4>
+          <p>A pill at the bottom of the screen shows the time, a live waveform and errors.</p>
         </div>
+        <div class="feat">
+          <h4>Uses the plan you have</h4>
+          <p>Sign in with <code>codex login</code>. The app uses the same transcription as the microphone button in the Codex desktop app.</p>
+        </div>
+        <p class="note">Screens and the trailer use demo text.</p>
       </section>
 
-      <!-- CLAUDEMONITOR -->
-      <section id="claudemonitor" class="pj" data-name="ClaudeMonitor" data-tagline="Claude and Codex limits in the Windows taskbar" aria-labelledby="cm-title" hidden>
-        <nav class="pj-crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span aria-hidden="true">/</span>
-          <a href="index.html#projects">Projects</a><span aria-hidden="true">/</span>
-          <span>Side project</span>
-        </nav>
-        <div class="pj-titlebar">
-          <h1 id="cm-title">ClaudeMonitor</h1>
-          <p class="pj-count" data-count></p>
+      <nav class="turn" aria-label="More projects">
+        <a href="#claudemonitor"><span>Next:</span> ClaudeMonitor</a>
+      </nav>
+    </div>
+  </article>
+
+  <article class="folio" id="claudemonitor" aria-labelledby="claudemonitor-title">
+    <div class="post-left">
+      <figure class="viewer">
+        <div class="stage"><img src="assets/projects/claudemonitor/label-tooltip.webp" alt="Taskbar label with its tooltip" width="444" height="432" loading="lazy"></div>
+        <figcaption>The taskbar label shows what is left for Claude and Codex. Hover it to see both windows and their reset times.</figcaption>
+        <ul class="thumbs" aria-label="Pictures of ClaudeMonitor">
+          <li><a href="assets/projects/claudemonitor/label-tooltip.webp" data-w="444" data-h="432" data-cap="The taskbar label shows what is left for Claude and Codex. Hover it to see both windows and their reset times." aria-current="true"><img src="assets/projects/claudemonitor/label-tooltip-t.webp" alt="Taskbar label with its tooltip" width="206" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/claudemonitor/settings-usage.webp" data-w="728" data-h="485" data-cap="New: the Usage tab. It shows the current allowance of each provider and 7 days of history."><img src="assets/projects/claudemonitor/settings-usage-t.webp" alt="Usage tab with 7-day history charts" width="300" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/claudemonitor/settings-usage-5h.webp" data-w="700" data-h="355" data-cap="The 5-hour view shows each window fill up and reset."><img src="assets/projects/claudemonitor/settings-usage-5h-t.webp" alt="Usage tab with 5-hour history charts" width="320" height="162" loading="lazy"></a></li>
+          <li><a href="assets/projects/claudemonitor/settings-providers.webp" data-w="612" data-h="435" data-cap="New: usage and an estimated cost for the last 30 days, read from the logs on your computer."><img src="assets/projects/claudemonitor/settings-providers-t.webp" alt="Providers tab with usage and cost" width="281" height="200" loading="lazy"></a></li>
+          <li><a href="assets/projects/claudemonitor/tray-menu.webp" data-w="482" data-h="356" data-cap="The tray menu: refresh, the taskbar label, usage and settings."><img src="assets/projects/claudemonitor/tray-menu-t.webp" alt="Tray menu" width="241" height="178" loading="lazy"></a></li>
+        </ul>
+      </figure>
+    </div>
+
+    <div class="post-right">
+      <header class="folio-head">
+        <div class="band">
+          <h2 id="claudemonitor-title" tabindex="-1">ClaudeMonitor</h2>
+          <p class="folio-tag">Claude and Codex limits in the Windows taskbar</p>
         </div>
+        <span class="stamp-wrap"><span class="stamp" role="img" aria-label="A painting of an owl keeping watch at night" style="--src: url(assets/folio-claudemonitor.webp)"></span></span>
+      </header>
 
-        <div class="pj-top">
-          <div class="pj-viewer" data-gallery>
-            <div class="pj-stage" data-stage></div>
-            <div class="pj-strip">
-              <button class="pj-thumb" type="button" data-src="assets/projects/claudemonitor/label-tooltip.webp" data-cap="The taskbar label shows what is left for Claude and Codex. Hover it to see both windows and their reset times."><img src="assets/projects/claudemonitor/label-tooltip-t.webp" alt="Taskbar label with its tooltip" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/claudemonitor/settings-usage.webp" data-cap="New: the Usage tab. It shows the current allowance of each provider and 7 days of history."><img src="assets/projects/claudemonitor/settings-usage-t.webp" alt="Usage tab with 7-day history charts" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/claudemonitor/settings-usage-5h.webp" data-cap="The 5-hour view shows each window fill up and reset."><img src="assets/projects/claudemonitor/settings-usage-5h-t.webp" alt="Usage tab with 5-hour history charts" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/claudemonitor/settings-providers.webp" data-cap="New: usage and an estimated cost for the last 30 days, read from the logs on your computer."><img src="assets/projects/claudemonitor/settings-providers-t.webp" alt="Providers tab with usage and cost" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/claudemonitor/tray-menu.webp" data-cap="The tray menu: refresh, the taskbar label, usage and settings."><img src="assets/projects/claudemonitor/tray-menu-t.webp" alt="Tray menu" loading="lazy"></button>
-            </div>
-            <div class="pj-scrub">
-              <button type="button" data-prev aria-label="Previous screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <div class="pj-track" aria-hidden="true"><span></span></div>
-              <button type="button" data-next aria-label="Next screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-            <p class="pj-cap" aria-live="polite"><span data-cap-text></span><span data-cap-count></span></p>
-          </div>
+      <div class="facts">
+        <p class="lead">A Windows tray app. It shows how much of your Claude and Codex usage limits is left, and when each limit resets. It keeps a history of each limit and estimates your cost from local logs.</p>
+        <ul class="lines">
+          <li class="kv"><span class="k">Date</span><span>May to November 2026</span></li>
+          <li class="kv"><span class="k">Role</span><span>Solo: design and code</span></li>
+          <li class="kv"><span class="k">Platform</span><span>Windows</span></li>
+          <li class="kv"><span class="k">Install</span><span>Portable: two .exe files, no Python needed</span></li>
+          <li class="kv"><span class="k">Built with</span><span>Python, Pillow, pystray, Win32, SQLite</span></li>
+        </ul>
+        <p class="go"><a href="https://github.com/kelpikz/ClaudeMonitor/releases/latest">Download</a> <a href="https://github.com/kelpikz/ClaudeMonitor">Code</a></p>
+      </div>
 
-          <aside class="pj-info" aria-label="ClaudeMonitor facts">
-            <img class="pj-capsule pj-capsule--contain" src="assets/projects/claudemonitor/hero.webp" alt="" loading="lazy">
-            <p class="pj-lead">A Windows tray app. It shows how much of your Claude and Codex usage limits is left, and when each limit resets. It keeps a history of each limit and estimates your cost from local logs.</p>
-            <dl class="pj-facts">
-              <div><dt>Date</dt><dd>May to November 2026</dd></div>
-              <div><dt>Role</dt><dd>Solo: design and code</dd></div>
-              <div><dt>Platform</dt><dd>Windows</dd></div>
-              <div><dt>Install</dt><dd>Portable: two .exe files, no Python needed</dd></div>
-            </dl>
-            <div class="pj-tags">
-              <p>Built with</p>
-              <div class="stack-list">
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy">Python</span>
-                <span class="stack-item"><span class="stack-glyph">PIL</span>Pillow</span>
-                <span class="stack-item"><span class="stack-glyph">Tr</span>pystray</span>
-                <span class="stack-item"><span class="stack-glyph">W32</span>Win32</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="" loading="lazy">SQLite</span>
-              </div>
-            </div>
-            <div class="pj-links">
-              <a class="hero-cta" href="https://github.com/kelpikz/ClaudeMonitor/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
-              <a class="hero-cta" href="https://github.com/kelpikz/ClaudeMonitor" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
-          </aside>
+      <section class="about" aria-labelledby="claudemonitor-about">
+        <h3 id="claudemonitor-about">About this project</h3>
+        <div class="feat">
+          <h4>Two providers, one label</h4>
+          <p>The taskbar shows one line for Claude and one for Codex. Hover it to see the 5-hour and 7-day windows and when each one resets.</p>
         </div>
-
-        <div class="pj-queue" data-queue></div>
-
-        <div class="pj-about">
-          <h2>About this project</h2>
-          <div class="pj-features">
-            <article class="pj-feature">
-              <div class="pj-shot" style="--pos: 50% 100%"><img src="assets/projects/claudemonitor/label-tooltip.webp" alt="" loading="lazy"></div>
-              <h3>Two providers, one label</h3>
-              <p>The taskbar shows one line for Claude and one for Codex. Hover it to see the 5-hour and 7-day windows and when each one resets.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot" style="--pos: 50% 50%"><img src="assets/projects/claudemonitor/settings-usage-5h.webp" alt="" loading="lazy"></div>
-              <h3>History of each limit</h3>
-              <p>The app saves each reading in SQLite for 31 days. Two charts show how fast you use each limit and when it resets.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot" style="--pos: 50% 100%"><img src="assets/projects/claudemonitor/settings-providers.webp" alt="" loading="lazy"></div>
-              <h3>Cost from local logs</h3>
-              <p>It reads the token counts in the Claude Code and Codex logs on your computer. It shows an estimated cost, the sessions and the cache savings.</p>
-            </article>
-          </div>
-          <p class="pj-note">Screenshots of the real app with demo numbers. The Usage tab and the cost summary are new and not in a release yet.</p>
+        <div class="feat">
+          <h4>History of each limit</h4>
+          <p>The app saves each reading in SQLite for 31 days. Two charts show how fast you use each limit and when it resets.</p>
         </div>
+        <div class="feat">
+          <h4>Cost from local logs</h4>
+          <p>It reads the token counts in the Claude Code and Codex logs on your computer. It shows an estimated cost, the sessions and the cache savings.</p>
+        </div>
+        <p class="note">Screenshots of the real app with demo numbers. The Usage tab and the cost summary are new and not in a release yet.</p>
       </section>
 
-      <!-- D-PAY -->
-      <section id="dpay" class="pj" data-name="D-Pay" data-tagline="cashless food stalls for Nittfest '23" hidden aria-labelledby="dpay-title">
-        <nav class="pj-crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span aria-hidden="true">/</span>
-          <a href="index.html#projects">Projects</a><span aria-hidden="true">/</span>
-          <span>Delta Force</span>
-        </nav>
-        <div class="pj-titlebar">
-          <h1 id="dpay-title">D-Pay</h1>
-          <p class="pj-count" data-count></p>
+      <nav class="turn" aria-label="More projects">
+        <a href="#dpay"><span>Next:</span> D-Pay</a>
+      </nav>
+    </div>
+  </article>
+
+  <article class="folio" id="dpay" aria-labelledby="dpay-title">
+    <div class="post-left">
+      <figure class="viewer">
+        <div class="stage"><video controls playsinline preload="none" poster="assets/projects/dpay/poster.webp" src="assets/projects/dpay/trailer.mp4"></video></div>
+        <figcaption>Trailer: one payment, from the phone to the ledger to the stall.</figcaption>
+        <ul class="thumbs" aria-label="Pictures of D-Pay">
+          <li><a href="assets/projects/dpay/trailer.mp4" data-video data-poster="assets/projects/dpay/poster.webp" data-cap="Trailer: one payment, from the phone to the ledger to the stall." aria-current="true"><img src="assets/projects/dpay/poster-t.webp" alt="D-Pay trailer" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/vendor-live.webp" data-w="1600" data-h="900" data-cap="Stall screen. New orders come in live, with no page reload."><img src="assets/projects/dpay/vendor-live-t.webp" alt="Vendor screen with live orders" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-splash.webp" data-w="416" data-h="900" data-cap="The phone app opens."><img src="assets/projects/dpay/pwa-splash-t.webp" alt="D-Pay splash screen" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-tour-1.webp" data-w="416" data-h="900" data-cap="A short tour for new users."><img src="assets/projects/dpay/pwa-tour-1-t.webp" alt="First tour step" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-dashboard.webp" data-w="416" data-h="900" data-cap="The wallet and its balance."><img src="assets/projects/dpay/pwa-dashboard-t.webp" alt="Wallet dashboard" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-food-stalls.webp" data-w="416" data-h="900" data-cap="Select a food stall."><img src="assets/projects/dpay/pwa-food-stalls-t.webp" alt="List of food stalls" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-amount-entry.webp" data-w="416" data-h="900" data-cap="Type the amount."><img src="assets/projects/dpay/pwa-amount-entry-t.webp" alt="Amount entry" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-pin-entry.webp" data-w="416" data-h="900" data-cap="Confirm with your PIN."><img src="assets/projects/dpay/pwa-pin-entry-t.webp" alt="PIN entry" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-payment-success.webp" data-w="416" data-h="900" data-cap="Payment done."><img src="assets/projects/dpay/pwa-payment-success-t.webp" alt="Payment success screen" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/pwa-transaction-history.webp" data-w="416" data-h="900" data-cap="Your transaction history."><img src="assets/projects/dpay/pwa-transaction-history-t.webp" alt="Transaction history" width="83" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/dpay/vendor-transactions.webp" data-w="1600" data-h="900" data-cap="Stall owners see all their transactions."><img src="assets/projects/dpay/vendor-transactions-t.webp" alt="Vendor transactions table" width="320" height="180" loading="lazy"></a></li>
+        </ul>
+      </figure>
+    </div>
+
+    <div class="post-right">
+      <header class="folio-head">
+        <div class="band">
+          <h2 id="dpay-title" tabindex="-1">D-Pay</h2>
+          <p class="folio-tag">Cashless food stalls for Nittfest '23</p>
         </div>
+        <span class="stamp-wrap"><span class="stamp" role="img" aria-label="A painting of a decorated elephant on a festival day" style="--src: url(assets/folio-dpay.webp)"></span></span>
+      </header>
 
-        <div class="pj-top">
-          <div class="pj-viewer" data-gallery>
-            <div class="pj-stage pj-stage--tall" data-stage></div>
-            <div class="pj-strip">
-              <button class="pj-thumb pj-thumb--video" type="button" data-video data-src="assets/projects/dpay/trailer.mp4" data-poster="assets/projects/dpay/poster.webp" data-cap="Trailer: one payment, from the phone to the ledger to the stall."><img src="assets/projects/dpay/poster-t.webp" alt="D-Pay trailer" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/dpay/vendor-live.webp" data-cap="Stall screen. New orders come in live, with no page reload."><img src="assets/projects/dpay/vendor-live-t.webp" alt="Vendor screen with live orders" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-splash.webp" data-cap="The phone app opens."><img src="assets/projects/dpay/pwa-splash-t.webp" alt="D-Pay splash screen" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-tour-1.webp" data-cap="A short tour for new users."><img src="assets/projects/dpay/pwa-tour-1-t.webp" alt="First tour step" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-dashboard.webp" data-cap="The wallet and its balance."><img src="assets/projects/dpay/pwa-dashboard-t.webp" alt="Wallet dashboard" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-food-stalls.webp" data-cap="Select a food stall."><img src="assets/projects/dpay/pwa-food-stalls-t.webp" alt="List of food stalls" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-amount-entry.webp" data-cap="Type the amount."><img src="assets/projects/dpay/pwa-amount-entry-t.webp" alt="Amount entry" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-pin-entry.webp" data-cap="Confirm with your PIN."><img src="assets/projects/dpay/pwa-pin-entry-t.webp" alt="PIN entry" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-payment-success.webp" data-cap="Payment done."><img src="assets/projects/dpay/pwa-payment-success-t.webp" alt="Payment success screen" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-tall data-src="assets/projects/dpay/pwa-transaction-history.webp" data-cap="Your transaction history."><img src="assets/projects/dpay/pwa-transaction-history-t.webp" alt="Transaction history" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/dpay/vendor-transactions.webp" data-cap="Stall owners see all their transactions."><img src="assets/projects/dpay/vendor-transactions-t.webp" alt="Vendor transactions table" loading="lazy"></button>
-            </div>
-            <div class="pj-scrub">
-              <button type="button" data-prev aria-label="Previous screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <div class="pj-track" aria-hidden="true"><span></span></div>
-              <button type="button" data-next aria-label="Next screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-            <p class="pj-cap" aria-live="polite"><span data-cap-text></span><span data-cap-count></span></p>
-          </div>
+      <div class="facts">
+        <p class="lead">A cashless payment system for the food stalls at Nittfest '23. Students paid from a phone wallet. The stall saw each order at the same time.</p>
+        <ul class="lines">
+          <li class="kv"><span class="k">Date</span><span>April 2023</span></li>
+          <li class="kv"><span class="k">Team</span><span>Delta Force, NIT Trichy</span></li>
+          <li class="kv"><span class="k">Role</span><span>Team lead, backend and app</span></li>
+          <li class="kv"><span class="k">Scale</span><span>Rs. 18,00,000+ in three days</span></li>
+          <li class="kv"><span class="k">Built with</span><span>Python, FastAPI, Go, React, TypeScript, PostgreSQL</span></li>
+        </ul>
+      </div>
 
-          <aside class="pj-info" aria-label="D-Pay facts">
-            <img class="pj-capsule" src="assets/projects/dpay/poster.webp" alt="" loading="lazy">
-            <p class="pj-lead">A cashless payment system for the food stalls at Nittfest '23. Students paid from a phone wallet. The stall saw each order at the same time.</p>
-            <dl class="pj-facts">
-              <div><dt>Date</dt><dd>April 2023</dd></div>
-              <div><dt>Team</dt><dd>Delta Force, NIT Trichy</dd></div>
-              <div><dt>Role</dt><dd>Team lead, backend and app</dd></div>
-              <div><dt>Scale</dt><dd>Rs. 18,00,000+ in three days</dd></div>
-            </dl>
-            <div class="pj-tags">
-              <p>Built with</p>
-              <div class="stack-list">
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy">Python</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" loading="lazy">FastAPI</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="" loading="lazy">Go</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy">React</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy">TypeScript</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" loading="lazy">PostgreSQL</span>
-              </div>
-            </div>
-          </aside>
+      <section class="about" aria-labelledby="dpay-about">
+        <h3 id="dpay-about">About this project</h3>
+        <div class="feat">
+          <h4>Pay with a PIN</h4>
+          <p>Each payment is one database transaction. It is fully done, or it is not done.</p>
         </div>
-
-        <div class="pj-queue" data-queue></div>
-
-        <div class="pj-about">
-          <h2>About this project</h2>
-          <div class="pj-features">
-            <article class="pj-feature">
-              <div class="pj-shot pj-shot--phone"><img src="assets/projects/dpay/pwa-pin-entry.webp" alt="" loading="lazy"></div>
-              <h3>Pay with a PIN</h3>
-              <p>Each payment is one database transaction. It is fully done, or it is not done.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot" style="--pos: 20% 0"><img src="assets/projects/dpay/vendor-live.webp" alt="" loading="lazy"></div>
-              <h3>Orders arrive live</h3>
-              <p>A Go service sends each new order to the stall screen over a WebSocket.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot pj-shot--phone"><img src="assets/projects/dpay/pwa-transaction-history.webp" alt="" loading="lazy"></div>
-              <h3>A ledger you can trust</h3>
-              <p>Each payment writes two ledger entries. Row locks stop double spending.</p>
-            </article>
-          </div>
-          <p class="pj-note">Screenshots use demo data.</p>
+        <div class="feat">
+          <h4>Orders arrive live</h4>
+          <p>A Go service sends each new order to the stall screen over a WebSocket.</p>
         </div>
+        <div class="feat">
+          <h4>A ledger you can trust</h4>
+          <p>Each payment writes two ledger entries. Row locks stop double spending.</p>
+        </div>
+        <p class="note">Screenshots use demo data.</p>
       </section>
 
-      <!-- UTOPIA -->
-      <section id="utopia" class="pj" data-name="Utopia" data-tagline="our campus online during the lockdown" aria-labelledby="utopia-title" hidden>
-        <nav class="pj-crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span aria-hidden="true">/</span>
-          <a href="index.html#projects">Projects</a><span aria-hidden="true">/</span>
-          <span>Delta Force</span>
-        </nav>
-        <div class="pj-titlebar">
-          <h1 id="utopia-title">Utopia</h1>
-          <p class="pj-count" data-count></p>
+      <nav class="turn" aria-label="More projects">
+        <a href="#utopia"><span>Next:</span> Utopia</a>
+      </nav>
+    </div>
+  </article>
+
+  <article class="folio" id="utopia" aria-labelledby="utopia-title">
+    <div class="post-left">
+      <figure class="viewer">
+        <div class="stage"><video controls playsinline preload="none" poster="assets/projects/utopia/poster.webp" src="assets/projects/utopia/trailer.mp4"></video></div>
+        <figcaption>Trailer: walk the campus, meet people, play games.</figcaption>
+        <ul class="thumbs" aria-label="Pictures of Utopia">
+          <li><a href="assets/projects/utopia/trailer.mp4" data-video data-poster="assets/projects/utopia/poster.webp" data-cap="Trailer: walk the campus, meet people, play games." aria-current="true"><img src="assets/projects/utopia/poster-t.webp" alt="Utopia trailer" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/menu.webp" data-w="1152" data-h="864" data-cap="The start menu."><img src="assets/projects/utopia/menu-t.webp" alt="Start menu" width="320" height="240" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/register-avatar-picked.webp" data-w="1600" data-h="900" data-cap="Sign up: pick a name, an avatar and your department."><img src="assets/projects/utopia/register-avatar-picked-t.webp" alt="Avatar selection" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/spawn.webp" data-w="1152" data-h="864" data-cap="You start at the main gate."><img src="assets/projects/utopia/spawn-t.webp" alt="Player at the main gate" width="320" height="240" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/area-admin.webp" data-w="1152" data-h="864" data-cap="The Admin block."><img src="assets/projects/utopia/area-admin-t.webp" alt="Admin block" width="320" height="240" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/area-orion.webp" data-w="1152" data-h="864" data-cap="Orion."><img src="assets/projects/utopia/area-orion-t.webp" alt="Orion" width="320" height="240" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/area-nso.webp" data-w="1152" data-h="864" data-cap="NSO: the track and the football field."><img src="assets/projects/utopia/area-nso-t.webp" alt="NSO sports ground" width="320" height="240" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/players-group.webp" data-w="1152" data-h="864" data-cap="Other students walk around live."><img src="assets/projects/utopia/players-group-t.webp" alt="A group of players" width="320" height="240" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/social-chat-reply.webp" data-w="1600" data-h="900" data-cap="Live chat with all players on the map."><img src="assets/projects/utopia/social-chat-reply-t.webp" alt="Live chat" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/minigame-2048.webp" data-w="1600" data-h="900" data-cap="Minigame: 2048."><img src="assets/projects/utopia/minigame-2048-t.webp" alt="2048 minigame" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/minigame-pacman.webp" data-w="1600" data-h="900" data-cap="Minigame: Pacman."><img src="assets/projects/utopia/minigame-pacman-t.webp" alt="Pacman minigame" width="320" height="180" loading="lazy"></a></li>
+          <li><a href="assets/projects/utopia/leaderboard-stack.webp" data-w="1600" data-h="900" data-cap="Each game has a leaderboard."><img src="assets/projects/utopia/leaderboard-stack-t.webp" alt="Stack leaderboard" width="320" height="180" loading="lazy"></a></li>
+        </ul>
+      </figure>
+    </div>
+
+    <div class="post-right">
+      <header class="folio-head">
+        <div class="band">
+          <h2 id="utopia-title" tabindex="-1">Utopia</h2>
+          <p class="folio-tag">Our campus online during the lockdown</p>
         </div>
+        <span class="stamp-wrap"><span class="stamp" role="img" aria-label="A painting of a peacock dancing in the monsoon rain" style="--src: url(assets/folio-utopia.webp)"></span></span>
+      </header>
 
-        <div class="pj-top">
-          <div class="pj-viewer" data-gallery>
-            <div class="pj-stage" data-stage></div>
-            <div class="pj-strip">
-              <button class="pj-thumb pj-thumb--video" type="button" data-video data-src="assets/projects/utopia/trailer.mp4" data-poster="assets/projects/utopia/poster.webp" data-cap="Trailer: walk the campus, meet people, play games."><img src="assets/projects/utopia/poster-t.webp" alt="Utopia trailer" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/menu.webp" data-cap="The start menu."><img src="assets/projects/utopia/menu-t.webp" alt="Start menu" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/register-avatar-picked.webp" data-cap="Sign up: pick a name, an avatar and your department."><img src="assets/projects/utopia/register-avatar-picked-t.webp" alt="Avatar selection" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/spawn.webp" data-cap="You start at the main gate."><img src="assets/projects/utopia/spawn-t.webp" alt="Player at the main gate" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/area-admin.webp" data-cap="The Admin block."><img src="assets/projects/utopia/area-admin-t.webp" alt="Admin block" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/area-orion.webp" data-cap="Orion."><img src="assets/projects/utopia/area-orion-t.webp" alt="Orion" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/area-nso.webp" data-cap="NSO: the track and the football field."><img src="assets/projects/utopia/area-nso-t.webp" alt="NSO sports ground" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/players-group.webp" data-cap="Other students walk around live."><img src="assets/projects/utopia/players-group-t.webp" alt="A group of players" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/social-chat-reply.webp" data-cap="Live chat with all players on the map."><img src="assets/projects/utopia/social-chat-reply-t.webp" alt="Live chat" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/minigame-2048.webp" data-cap="Minigame: 2048."><img src="assets/projects/utopia/minigame-2048-t.webp" alt="2048 minigame" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/minigame-pacman.webp" data-cap="Minigame: Pacman."><img src="assets/projects/utopia/minigame-pacman-t.webp" alt="Pacman minigame" loading="lazy"></button>
-              <button class="pj-thumb" type="button" data-src="assets/projects/utopia/leaderboard-stack.webp" data-cap="Each game has a leaderboard."><img src="assets/projects/utopia/leaderboard-stack-t.webp" alt="Stack leaderboard" loading="lazy"></button>
-            </div>
-            <div class="pj-scrub">
-              <button type="button" data-prev aria-label="Previous screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <div class="pj-track" aria-hidden="true"><span></span></div>
-              <button type="button" data-next aria-label="Next screenshot"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-            <p class="pj-cap" aria-live="polite"><span data-cap-text></span><span data-cap-count></span></p>
-          </div>
+      <div class="facts">
+        <p class="lead">New students could not come to NIT Trichy during the lockdown. They walked a pixel-art copy of the campus and met online.</p>
+        <ul class="lines">
+          <li class="kv"><span class="k">Date</span><span>January 2022</span></li>
+          <li class="kv"><span class="k">Event</span><span>Orientation '21</span></li>
+          <li class="kv"><span class="k">Team</span><span>Delta Force, NIT Trichy</span></li>
+          <li class="kv"><span class="k">Scale</span><span>100+ users at the same time</span></li>
+          <li class="kv"><span class="k">Built with</span><span>Go, React, Phaser, WebSockets, Redis</span></li>
+        </ul>
+      </div>
 
-          <aside class="pj-info" aria-label="Utopia facts">
-            <img class="pj-capsule" src="assets/projects/utopia/poster.webp" alt="" loading="lazy">
-            <p class="pj-lead">New students could not come to NIT Trichy during the lockdown. They walked a pixel-art copy of the campus and met online.</p>
-            <dl class="pj-facts">
-              <div><dt>Date</dt><dd>January 2022</dd></div>
-              <div><dt>Event</dt><dd>Orientation '21</dd></div>
-              <div><dt>Team</dt><dd>Delta Force, NIT Trichy</dd></div>
-              <div><dt>Scale</dt><dd>100+ users at the same time</dd></div>
-            </dl>
-            <div class="pj-tags">
-              <p>Built with</p>
-              <div class="stack-list">
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="" loading="lazy">Go</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy">React</span>
-                <span class="stack-item"><span class="stack-glyph">Ph</span>Phaser</span>
-                <span class="stack-item"><span class="stack-glyph">WS</span>WebSockets</span>
-                <span class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="" loading="lazy">Redis</span>
-              </div>
-            </div>
-          </aside>
+      <section class="about" aria-labelledby="utopia-about">
+        <h3 id="utopia-about">About this project</h3>
+        <div class="feat">
+          <h4>Walk the real campus</h4>
+          <p>The main gate, Admin, Octa, Orion, LHC, the Library, the Barn and NSO.</p>
         </div>
-
-        <div class="pj-queue" data-queue></div>
-
-        <div class="pj-about">
-          <h2>About this project</h2>
-          <div class="pj-features">
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/utopia/area-orion.webp" alt="" loading="lazy"></div>
-              <h3>Walk the real campus</h3>
-              <p>The main gate, Admin, Octa, Orion, LHC, the Library, the Barn and NSO.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot"><img src="assets/projects/utopia/players-group.webp" alt="" loading="lazy"></div>
-              <h3>Meet people live</h3>
-              <p>A Go server sends the position of each player over WebSockets. Chat and video calls are in the game.</p>
-            </article>
-            <article class="pj-feature">
-              <div class="pj-shot" style="--pos: 38% 30%"><img src="assets/projects/utopia/minigame-2048.webp" alt="" loading="lazy"></div>
-              <h3>Play and compete</h3>
-              <p>Four minigames: 2048, Hextris, Pacman and Stack. Each game has a leaderboard.</p>
-            </article>
-          </div>
-          <p class="pj-note">The live site is offline. I ran it again locally, with test players, to record these screens.</p>
+        <div class="feat">
+          <h4>Meet people live</h4>
+          <p>A Go server sends the position of each player over WebSockets. Chat and video calls are in the game.</p>
         </div>
+        <div class="feat">
+          <h4>Play and compete</h4>
+          <p>Four minigames: 2048, Hextris, Pacman and Stack. Each game has a leaderboard.</p>
+        </div>
+        <p class="note">The live site is offline. I ran it again locally, with test players, to record these screens.</p>
       </section>
 
-      <section id="contact" class="contact-strip" aria-label="Contact links">
-        <a href="https://github.com/kelpikz" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.2-.11-.29-.6-1.2-1.03-1.44-.35-.19-.85-.66-.01-.67.79-.01 1.35.75 1.54 1.06.9 1.55 2.34 1.11 2.91.85.09-.67.35-1.11.64-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 7c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.93.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ajitha-prasad-y/" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.62h3.96V21H3V9.62Zm6.18 0h3.79v1.55h.05c.53-.95 1.82-1.95 3.74-1.95 4 0 4.74 2.63 4.74 6.06V21h-3.95v-5.08c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68V21H9.18V9.62Z"/></svg>
-          LinkedIn
-        </a>
-        <a href="assets/Ajitha_Prasad_Resume_Website.pdf">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.75h8.35L19 7.4v13.85H6V2.75Zm7.5 1.75v3.75h3.75L13.5 4.5ZM7.75 4.5v15h9.5v-9.75H12V4.5h-4.25Zm2 8h5.5V14h-5.5v-1.5Zm0 3h5.5V17h-5.5v-1.5Z"/></svg>
-          Resume
-        </a>
-      </section>
-    </main>
+      <nav class="turn" aria-label="More projects">
+        <a href="#dalal-street"><span>Next:</span> Dalal Street</a>
+      </nav>
+    </div>
+  </article>
 
-    <script src="script.js?v=27"></script>
-    <script src="projects.js?v=4"></script>
-    <script src="projects.prototype.js"></script>
-    <script data-goatcounter="https://kelpikz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  </body>
+  <article class="folio brief" id="dalal-street" aria-labelledby="dalal-street-title">
+    <div class="post-left">
+      <div class="plate" role="img" aria-label="A painting of a decorated bull climbing a hill" style="--src: url(assets/folio-dalal-street.webp)"></div>
+    </div>
+
+    <div class="post-right">
+      <header class="folio-head">
+        <div class="band">
+          <h2 id="dalal-street-title" tabindex="-1">Dalal Street</h2>
+          <p class="folio-tag">The stock market game of Pragyan</p>
+        </div>
+        <span class="stamp-wrap"><span class="stamp" role="img" aria-label="A painting of a decorated bull climbing a hill" style="--src: url(assets/folio-dalal-street.webp)"></span></span>
+      </header>
+
+      <div class="facts">
+        <p class="lead">Dalal Street is the stock market game of Pragyan. I worked on its backend in Go.</p>
+        <ul class="lines">
+          <li class="kv"><span class="k">Team</span><span>Delta Force, NIT Trichy</span></li>
+        </ul>
+        <p class="go"><a href="https://github.com/delta/dalal-street-server">Code</a></p>
+      </div>
+
+      <nav class="turn" aria-label="More projects">
+        <a href="#shelf"><span>Next:</span> Shelf</a>
+      </nav>
+    </div>
+  </article>
+</div>
+
+<dialog class="modal" id="modal">
+  <button type="button" class="close" id="close"><svg aria-hidden="true" viewBox="0 0 10 10" width="10" height="10"><path d="M1.6 1.8 8.3 8.4M8.4 1.6 1.7 8.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg> Back to the floor</button>
+  <div class="sheet" id="sheet"></div>
+</dialog>
+
+<script src="assets/scenes.js"></script>
+<script src="projects.js"></script>
+<script data-goatcounter="https://kelpikz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
 </html>

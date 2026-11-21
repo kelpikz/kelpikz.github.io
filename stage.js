@@ -363,3 +363,9 @@ STAGE.actors = function (G) {
   void R; void orbX; void boatS;
   return a;
 };
+
+/* ======================================================================== THE OTHER PLACES
+   The lake is one of three places.  The others are in files of their own (stage-desert.js, stage-forest.js) and are
+   set out the same way: geom, background, sketch, cels, actors. */
+STAGE.places = { lake: { geom: STAGE.geom, background: STAGE.background, sketch: STAGE.sketch, cels: STAGE.cels, actors: STAGE.actors } };
+STAGE.at = place => STAGE.places[place] || STAGE.places.lake;

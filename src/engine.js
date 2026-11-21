@@ -121,9 +121,10 @@ function createArt(opt) {
       }
     }
     // fibres: short hairs pressed into the sheet
-    const nf = Math.round(5200 * g * g);
+    const fib = opt.fibres == null ? 1 : opt.fibres;     // a burnished wasli sheet has fewer and flatter hairs than raw paper
+    const nf = Math.round(5200 * g * g * fib);
     for (let k = 0; k < nf; k++) {
-      let x = rnd() * W, y = rnd() * H, an = rnd() * 6.283, len = rr(14, 70) * g, cv = rr(-0.05, 0.05), amt = rr(0.10, 0.32) * (rnd() < 0.8 ? 1 : -1);
+      let x = rnd() * W, y = rnd() * H, an = rnd() * 6.283, len = rr(14, 70) * g, cv = rr(-0.05, 0.05), amt = rr(0.10, 0.32) * (rnd() < 0.8 ? 1 : -1) * (fib < 1 ? 0.4 + 0.6 * fib : 1);
       for (let s = 0; s < len; s++) {
         const xi = x | 0, yi = y | 0;
         if (xi > 0 && yi > 0 && xi < W - 1 && yi < H - 1) { const i = yi * W + xi; HM[i] += amt; HM[i + 1] += amt * 0.4; HM[i + W] += amt * 0.4; }
