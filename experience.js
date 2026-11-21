@@ -20,14 +20,13 @@
 (function () {
   'use strict';
   var root = document.documentElement;
-  if (!document.querySelector || !window.requestAnimationFrame || !window.EXPERIENCE) { root.classList.remove('js'); return; }
+  if (!document.querySelector || !window.requestAnimationFrame || !window.EXPERIENCE) return;
   // the painting's own manifest if it has been painted, and the stand-in if not
   if (window.WELL8K) start();
   else {
     var sc = document.createElement('script');
     sc.src = 'assets/well8k-ph/manifest.js';
-    sc.onload = function () { if (window.WELL8K) start(); else root.classList.remove('js'); };
-    sc.onerror = function () { root.classList.remove('js'); };
+    sc.onload = function () { if (window.WELL8K) start(); };
     document.head.appendChild(sc);
   }
 
@@ -67,6 +66,8 @@
   var hotLayer = $('hot'), tip = $('tip'), card = $('card'), cardBody = $('cardBody'), lampList = $('lamps');
   var upBtn = $('up'), downBtn = $('down'), grab = $('grab'), pauseBtn = $('pause'), say = $('say');
   var pg = paint.getContext('2d', { alpha: false }), lg = live.getContext('2d');
+  if (!pg || !lg) return;
+  root.classList.add('js');
 
   // ---- the drawn paper.  If a sheet does not load, plain lines stand in for it. -------------------------------------
   [['card', 'paper-card-sh.webp'], ['frieze', 'paper-frieze.webp'], ['slip', 'paper-slip.webp']].forEach(function (p) {
@@ -510,19 +511,21 @@
       evict(); planned = false; dirty = true; kick();
       if (!wasMoving && img && t.L !== LEV[0]) thumbsSoon();
     };
-    var url = srcOf(t);
+    var url = srcOf(t), priority = t.L === LEV[0] ? 'high' : 'auto';
     if (canFetch) {
       // (unpacked away from the page's own thread)
-      fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+      fetch(url, { priority: priority }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
         .then(function (b) { return createImageBitmap(b); })
         .then(function (bm) { done(bm, bm.width, bm.height); }, function () { done(null); });
     } else {
       var im = new Image(); im.decoding = 'async';
+      im.fetchPriority = priority;
       im.onload = function () { (im.decode ? im.decode() : Promise.resolve()).then(function () { done(im, im.naturalWidth, im.naturalHeight); }, function () { done(null); }); };
       im.onerror = function () { done(null); };
       im.src = url;
     }
   }
+  LEV[0].tiles.forEach(load);
   function evict() {
     if (bytes <= BUDGET) return;
     var out = [];
@@ -553,11 +556,13 @@
     if (lookId && lookCam) wantView(lookCam, 2, 0, false);
     var dest = goal >= 0 ? goal : moving ? clamp(Math.round(u + (YT > Y ? 0.5 : -0.5)), 0, NS - 1) : stop;
     wantView(cams[dest], 2, 0.05, false);
-    if (stop + 1 < NS) wantView(cams[stop + 1], 3, 0, false);
-    if (stop - 1 >= 0) wantView(cams[stop - 1], 3, 0, false);
-    // the card's small pictures, and then all of the second level, which is small
-    thumbs.forEach(function (th) { if (Math.abs(th.stop - stop) <= 1 && th.lvl < thumbLevel(th)) eachTile(LEV[thumbLevel(th)], thumbBox(th), function (t) { want(t, 4e6); }); });
-    if (LEV.length > 1 && LEV[1].tiles.length <= 16) LEV[1].tiles.forEach(function (t) { want(t, 5e6 + Math.hypot(t.x - cam.x, t.y - cam.y)); });
+    // Warm nearby stops and thumbnails once the opening image has reached the canvas.
+    if (revealAt || LEV[0].tiles.every(function (t) { return t.st === 3; })) {
+      if (stop + 1 < NS) wantView(cams[stop + 1], 3, 0, false);
+      if (stop - 1 >= 0) wantView(cams[stop - 1], 3, 0, false);
+      thumbs.forEach(function (th) { if (Math.abs(th.stop - stop) <= 1 && th.lvl < thumbLevel(th)) eachTile(LEV[thumbLevel(th)], thumbBox(th), function (t) { want(t, 4e6); }); });
+      if (LEV.length > 1 && LEV[1].tiles.length <= 16) LEV[1].tiles.forEach(function (t) { want(t, 5e6 + Math.hypot(t.x - cam.x, t.y - cam.y)); });
+    }
     list.sort(function (a, b) { return a.pr - b.pr; });
     for (var i = 0; i < list.length && inflight < MAXFLY; i++) {
       if (bytes > BUDGET * 0.92 && list[i].pr >= 3e6) break;
@@ -575,7 +580,8 @@
     if (warmQ.length) {
       var t0 = performance.now(), w = warmQ.shift();
       try { pg.drawImage(w.img, 0, 0, 4, 4, 0, 0, 3, 3); } catch (e) { /* a tile let go meanwhile */ }
-      w.warm = true; w.born = now; if (!revealAt && w.L === LEV[0]) revealAt = now;
+      w.warm = true; w.born = now;
+      if (!revealAt && w.L === LEV[0]) { revealAt = now; planned = false; }
       stats.warmMax = Math.max(stats.warmMax, performance.now() - t0);
       st.fading = true;
     }
@@ -1985,7 +1991,11 @@
       requestAnimationFrame(function () { card.style.transition = ''; });
     }, 300);
   }
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { layout(); stepMove(0, performance.now()); applyCamera(); warmCard(); kick(); });
+  if (document.fonts) {
+    var layoutFonts = function () { layout(); stepMove(0, performance.now()); applyCamera(); warmCard(); kick(); };
+    document.fonts.ready.then(layoutFonts);
+    document.fonts.addEventListener('loadingdone', layoutFonts);
+  }
   else warmCard();
   kick();
   }

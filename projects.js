@@ -60,7 +60,7 @@
   });
 
   var canModal = !!(dlg && sheet && store && typeof dlg.showModal === 'function');
-  if (!canModal) { root.classList.remove('js'); return; }        // the folios and the articles stay in the page, on plain paper
+  if (!canModal) return;                                        // the folios and the articles stay in the page, on plain paper
 
   var hashId = function () { try { return decodeURIComponent(location.hash.slice(1)); } catch (e) { return ''; } };
   var putBack = function () {
@@ -103,7 +103,7 @@
     if (!a) return;
     if (a.matches('.thumbs a')) { e.preventDefault(); pick(a); return; }
     var h = a.getAttribute('href') || '';
-    if (h.charAt(0) === '#' && F[h.slice(1)]) { e.preventDefault(); go(h.slice(1)); }
+    if (root.classList.contains('js') && h.charAt(0) === '#' && F[h.slice(1)]) { e.preventDefault(); go(h.slice(1)); }
   });
   $('close').addEventListener('click', shut);
   dlg.addEventListener('cancel', function (e) { e.preventDefault(); shut(); });        // Esc
@@ -148,8 +148,12 @@
   var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
   var rr = function (a, b) { return a + Math.random() * (b - a); };
   var TICK = 1 / 12;
-  if (!room || !CV.paint || !CV.paint.getContext) return;
-  var G = {}; for (var nm in CV) G[nm] = CV[nm].getContext('2d');
+  if (!room) return;
+  var G = {};
+  for (var nm in CV) {
+    G[nm] = CV[nm] && CV[nm].getContext && CV[nm].getContext('2d');
+    if (!G[nm]) return;
+  }
 
   // which picture stands for the floor: the floor itself, or (only to try the layers and the hours, with ?fake=1) the lake
   var PLACE = query.has('fake') && SC['day-wide'] ? 'lake' : (SC['floor-day-wide'] || SC['floor-day-tall'] ? 'floor' : null);
@@ -169,7 +173,7 @@
 
   var mood = PLACE ? moodNow() : 'day', fmt = 'wide';
   var vw = 0, vh = 0, k = 1, ox = 0, oy = 0, dpr = 1, K = 1, OX = 0, OY = 0;   // the window, and scene units to pixels
-  var scene = null, CELS = null, ATLAS = null, SS = 1, EDGE = null;
+  var scene = null, initialPainting = null, CELS = null, ATLAS = null, SS = 1, EDGE = null;
   var layers = {}, tick = 0, acc = 0, last = 0, raf = 0;
   var wantPlay = !reduce.matches, playing = false, held = !!dlg.open, busy = true;
 
@@ -238,9 +242,16 @@
     return cache[src];
   }
   function sceneKey(m, f) { f = fmtOf(f); return SC[key(m, f)] ? key(m, f) : key('day', f); }
-  function loadScene(m, f) {
+  function loadScene(m, f, onBackground) {
+    f = fmtOf(f);
     var kk = sceneKey(m, f), man = SC[kk];
-    return Promise.all([img(man.bg), img(man.atlas)]).then(function (r) { return { key: kk, mood: SC[key(m, fmtOf(f))] ? m : 'day', fmt: fmtOf(f), man: man, bg: r[0], atlas: r[1], edge: edgeOf(r[0]) }; });
+    var background = img(man.bg, true);
+    var atlas = img(man.atlas).catch(function () { return null; });
+    return background.then(function (im) {
+      var sc = { key: kk, mood: SC[key(m, f)] ? m : 'day', fmt: f, man: man, bg: im, edge: edgeOf(im) };
+      if (onBackground) onBackground(sc);
+      return atlas.then(function (drawing) { sc.atlas = drawing; return sc; });
+    });
   }
   // the colour of each edge of the picture, to fill what it leaves bare
   function edgeOf(im) {
@@ -277,7 +288,7 @@
     if (y0 > 0) side(e.t, 0, 0, cw, y0 + 1, 0, y0, 0, y0 + f);
     if (y1 < ch) side(e.b, 0, y1 - 1, cw, ch - y1 + 1, 0, y1, 0, y1 - f);
   }
-  function drawPaint() { bare(G.paint, drawImageFit(G.paint, scene.bg, scene.man), scene.edge); }
+  function drawPaint(sc) { bare(G.paint, drawImageFit(G.paint, sc.bg, sc.man), sc.edge); }
   var sketchIm = null, sketchMan = null;
   function drawSketch() { if (sketchIm) bare(G.sketch, drawImageFit(G.sketch, sketchIm, sketchMan), scene && scene.edge); }
 
@@ -382,9 +393,10 @@
     body.dataset.mood = mood;
     moodBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mood === mood)); });
     if (theme) theme.setAttribute('content', THEME[mood] || THEME.day);
-    drawPaint();
+    if (sc !== initialPainting) drawPaint(sc);
+    initialPainting = null;
     var still = !wantPlay;
-    var list = FAKE ? fakeActors(sc.man) : (sc.man.actors || []).slice();
+    var list = !ATLAS ? [] : FAKE ? fakeActors(sc.man) : sc.man.actors || [];
     layers = {};
     list.map(function (a, i) { return { a: a, i: i }; })
       .sort(function (p, q) { return ((p.a.z || 0) - (q.a.z || 0)) || p.i - q.i; })
@@ -409,7 +421,7 @@
   // it moves when the visitor wants it to, the page is in view, and no folio is open over it
   function setPlay() {
     var was = playing;
-    playing = wantPlay && !held && !document.hidden && !!scene;
+    playing = wantPlay && !held && !document.hidden && !!ATLAS;
     body.classList.toggle('still', !(wantPlay && !held && !document.hidden));
     if (playing && !raf) { last = performance.now(); raf = requestAnimationFrame(frame); }
     if (was !== playing && scene && !playing) drawLayers(false);
@@ -446,7 +458,13 @@
   };
 
   // ---- start -------------------------------------------------------------------------------------------------------
-  layout();
+  root.classList.add('js');
+  try {
+    layout();
+  } catch (error) {
+    root.classList.remove('js');
+    throw error;
+  }
   body.dataset.mood = mood;
   requestAnimationFrame(function () { requestAnimationFrame(function () { room.classList.add('placed'); }); });
   var rz = 0;
@@ -455,7 +473,10 @@
       room.classList.remove('placed'); clearTimeout(rz);
       rz = setTimeout(function () { fn(); requestAnimationFrame(function () { room.classList.add('placed'); }); }, 120);
     });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fn);
+    if (document.fonts) {
+      document.fonts.ready.then(fn);
+      document.fonts.addEventListener('loadingdone', fn);
+    }
   };
   if (!PLACE) {                                      // no picture: the folios lie on a plain floor
     body.classList.add('still');
@@ -480,27 +501,40 @@
   document.addEventListener('visibilitychange', setPlay);
   if (reduce.addEventListener) reduce.addEventListener('change', function () { wantPlay = !reduce.matches; syncPause(); if (scene) showScene(scene); setPlay(); });
 
-  // first the lines in red earth, then the painting comes up over them
+  // Show the sketch when available, then paint the floor while its animation loads.
+  function showInitialPainting(sc) {
+    if (sc.fmt !== fmtOf(fmt)) return;
+    initialPainting = sc;
+    body.dataset.mood = sc.mood;
+    drawPaint(sc);
+    room.classList.add('on');
+  }
+  function startScene() {
+    return loadScene(mood, fmt, showInitialPainting).then(function (sc) {
+      if (sc.fmt !== fmtOf(fmt)) return startScene();
+      showScene(sc); busy = false; setPlay();
+    });
+  }
+  startScene().catch(function () { busy = false; body.classList.remove('pic'); body.classList.add('still'); });
   var man0 = SC[sceneKey(mood, fmt)];
-  if (man0 && man0.sketch) img(man0.sketch, true).then(function (im) {
-    if (scene) return;
+  if (man0 && man0.sketch) img(man0.sketch).then(function (im) {
+    if (scene || initialPainting) return;
     sketchIm = im; sketchMan = man0; drawSketch(); CV.sketch.classList.add('on');
   }, function () {});
-  function arrive(sc) { showScene(sc); busy = false; room.classList.add('on'); setPlay(); }
-  loadScene(mood, fmt).then(function (sc) {
-    if (sc.fmt !== fmtOf(fmt)) return loadScene(mood, fmt).then(arrive);       // the window changed shape meanwhile
-    arrive(sc);
-  }, function () { busy = false; body.classList.remove('pic'); body.classList.add('still'); });
 
   // the window changes shape
   function relayout() {
     var f0 = fmt; layout();
-    if (!scene) { if (sketchIm) drawSketch(); return; }
+    if (!scene) {
+      if (initialPainting && initialPainting.fmt === fmtOf(fmt)) drawPaint(initialPainting);
+      if (sketchIm) drawSketch();
+      return;
+    }
     if (fmtOf(fmt) !== scene.fmt) {
       loadScene(mood, fmt).then(function (sc) { if (sc.fmt === fmtOf(fmt)) { showScene(sc); setPlay(); } });
       return;
     }
-    drawPaint(); drawLayers(false);
+    drawPaint(scene); drawLayers(false);
     if (f0 !== fmt && sketchIm) drawSketch();
   }
   onResize(relayout);
