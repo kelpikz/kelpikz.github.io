@@ -165,6 +165,12 @@
     p.appendChild(document.createTextNode(text.slice(at + link.text.length)));
     return p;
   }
+  function marked(p, text) {
+    text.split(/\*\*([^*]+)\*\*/).forEach(function (part, i) {
+      if (part) p.appendChild(i % 2 ? el('strong', null, part) : document.createTextNode(part));
+    });
+    return p;
+  }
   // ---- what the card says at each stop: the year (its years, the role, its milestones) and the one thing -----------
   var thumbs = [];                                           // { canvas, id, stop, lvl }: pictures cut from the painting
   var OBJEL = [];                                            // the card's parts tied to a thing (data-obj), at every stop
@@ -198,7 +204,7 @@
       if (b) {
         art.appendChild(el('p', 'thing', b.thing));
         var txt = art.appendChild(el('div', 'txt'));
-        b.lines.forEach(function (x) { txt.appendChild(el('p', null, x)); });
+        b.lines.forEach(function (x) { txt.appendChild(marked(el('p'), x)); });
         // a smaller thing told of inside this one: its own small picture (press it to look at it) beside its words
         (b.parts || []).forEach(function (pt) {
           var pe = txt.appendChild(el('div', 'part'));
@@ -211,7 +217,7 @@
             pl.addEventListener('click', function () { if (sheet) openSheet(false); look(pt.obj); });
           }
           var pw = pe.appendChild(el('div', 'part-words'));
-          pw.appendChild(el('p', null, pt.text));
+          pw.appendChild(marked(el('p'), pt.text));
           if (pt.links && pt.links.length) {
             var pg2 = pw.appendChild(el('p', 'go'));
             pt.links.forEach(function (k) { var a = pg2.appendChild(el('a', null, k.text)); a.href = k.href; });
@@ -223,8 +229,8 @@
         }
       }
     }
-    if (l.lines) l.lines.forEach(function (x) { sec.appendChild(el('p', 'wl', x)); });
-    (l.also || []).forEach(function (x) { sec.appendChild(el('p', 'also', x.text)); });
+    if (l.lines) l.lines.forEach(function (x) { sec.appendChild(marked(el('p', 'wl'), x)); });
+    (l.also || []).forEach(function (x) { sec.appendChild(linked(el('p', 'also'), x.text, x.link)); });
     return sec;
   });
   // Two panes, one over the other, hold the stops either side of where you are.  The upper one fades in over the lower

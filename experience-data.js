@@ -13,16 +13,16 @@
    "hover" are things in the painting that are not stops and not in the card: hover one (or tap it) and its words
    show by it.
 
+   Use ** to bold short phrases in card paragraphs.
    Marked "unconfirmed" or "waiting": not checked with Ajitha yet.  These show on the page as written. */
 window.EXPERIENCE = {
   title: 'Experience',
-  intro: 'Going down this well is going back in time. Optmyzr is up in the sun, and college is down by the water.',
+  intro: 'Go down the stepwell to see what I built, from Optmyzr back to my time at NIT Trichy.',
   cue: 'Go down',
 
   // NOT CONFIRMED: how the years are grouped into levels was a first guess by the painter.
   unconfirmed: [
     'How the years are grouped into the levels.',
-    'The year of the Optmyzr internal hackathon (the résumé gives none).',
     'Whether the Portfolio platform belongs on 2023-24 or on 2025-26.',
     'The water: what came before college.'
   ],
@@ -37,42 +37,47 @@ window.EXPERIENCE = {
         {
           obj: 'sidekick', title: 'Sidekick', thing: 'the dovecote',
           lines: [
-            'A production AI agent for PPC marketers. It answers by calling tools across more than ten of our internal services.',
-            'I built the LLM router that picks one of ten specialised tools, and an eval suite that cut wrong tool calls.',
-            'I brought answers down from about 3 minutes to under 90 seconds.'
-          ]
+            'I helped take Sidekick **from zero to one**. We launched an AI assistant that helps PPC marketers analyze and optimize campaigns by calling tools across more than 10 internal services.',
+            'I built the router that selects from **10 specialized tools**, added access controls for tool calls, and built an **eval suite** that reduced incorrect tool calls.',
+            'I built a tool for product and engineering teams to inspect agent traces, replay conversations, time tool calls, and turn failures into new eval cases. That work **improved accuracy by 26%** and reduced hallucinations.',
+            'I built a model router that **cut costs by 18%** and added a custom memory layer for each user.'
+          ],
+          links: [{ text: 'Sidekick user guide', href: 'https://help.optmyzr.com/en/articles/12505157-optmyzr-sidekick-about-user-guide' }]
         },
         {
           obj: 'rule-builder', title: 'AI Rule Builder', thing: 'the loom',
           lines: [
-            'A multi-agent system that turns a plain-English request into a program for the Optmyzr rule engine DSL.',
-            'It finds examples with Pinecone retrieval. A compile-and-repair loop gives the compiler errors back to the agent.',
-            'I took accuracy from 35% to 82%, and the time from over 200 s to 45–60 s.'
-          ]
+            'I built a system that turns **plain-English requests into ad optimization rules**. It gives advertisers a plan to edit before compiling it into the language used by the Optmyzr Rule Engine.',
+            'I used Pinecone to find relevant examples. I also built a **DSL validator** that checks the code the agent generates and returns errors in a format the agent can use to fix its output.',
+            'I raised accuracy from **35% to 82%** and cut generation time from **over 200 seconds to 45–60 seconds** by reducing the number of agents from three to two and refining their prompts. I tracked quality across releases with evals scored by an LLM.'
+          ],
+          links: [{ text: 'Rule Engine user guide', href: 'https://help.optmyzr.com/en/articles/3076017-what-is-the-rule-engine' }]
         }
-      ],
-      // the résumé gives no year for this one, so it has no flood mark
-      also: [{ text: 'I also won the Optmyzr internal hackathon.', unconfirmed: 'year not known' }]
+      ]
     },
     {
       id: 'y2023', label: '2023–24', years: '2023–24',
       role: 'Software Engineer at Optmyzr', link: { text: 'Optmyzr', href: 'https://www.optmyzr.com/' },
       miles: [
-        { obj: 'joined', kind: 'sindoor', text: 'June 2023: I joined Optmyzr.' },
-        { kind: 'plain', text: '2023: I finished my B.Tech at NIT Trichy.' }
+        { obj: 'joined', kind: 'sindoor', text: 'I joined Optmyzr in June 2023.' },
+        { kind: 'plain', text: 'I graduated from NIT Trichy in 2023.' }
       ],
       blocks: [
         {
           obj: 'portfolio', title: 'Portfolio Management Platform', thing: 'six spouts into one tank',
           lines: [
-            'It pulls live data from six ad networks into one place: Google Ads, Microsoft Ads, Amazon DSP, Facebook Ads, LinkedIn and Yahoo Gemini.',
-            'It covers more than 1,000 portfolios, 3,000 accounts and $2B in ad spend.',
-            'It has a GraphQL API and a React dashboard over MongoDB and DuckDB, and a RAG support bot over more than 10,000 documents.'
+            'I designed the platform and built the pipeline that brings live data from **six ad networks** into one dashboard: Google Ads, Microsoft Ads, Amazon DSP, Facebook Ads, LinkedIn and Yahoo Gemini.',
+            'The platform covered **1,000+ portfolios, 3,000+ accounts and $2B+ in ad spend** and was a primary revenue driver from Q4 2024 to Q2 2025.',
+            'I built the GraphQL API and React dashboard on MongoDB and DuckDB, so users could run interactive queries across **more than a million data points**.'
           ],
+          links: [{ text: 'Optmyzr Portfolio View', href: 'https://help.optmyzr.com/en/articles/11313715-all-accounts-dashboard-portfolio-view' }],
           // the résumé says it was a main revenue driver from Q4 2024 to Q2 2025: it may belong on the level above
           unconfirmed: 'level'
         }
-      ]
+      ],
+      also: [{
+        text: 'Elsewhere at Optmyzr, I shipped a support bot backed by a knowledge base of more than 1,000 documents. I took part in the on-call rotation, handled multiple production incidents, and built custom solutions for enterprise clients.'
+      }]
     },
     {
       id: 'y2022', label: '2022', years: '2022',
@@ -81,10 +86,16 @@ window.EXPERIENCE = {
         {
           obj: 'pragyan', title: 'Pragyan', thing: 'the lanterns',
           lines: [
-            'Pragyan is the tech fest of NIT Trichy, certified to ISO 20121.',
-            'As Head of Web Ops I led a team of 60 for a fest with more than 40,000 visitors.'
+            'I led the **60-person web team** for Pragyan, the tech festival at NIT Trichy. The ISO 20121-certified festival drew **more than 40,000 visitors**.',
+            'I built the **registration and accommodation booking system**, including the web interface attendees used to sign up and book a place to stay.'
           ],
-          links: [{ text: 'Pragyan', href: 'https://www.pragyan.org/' }]
+          links: [{ text: 'Pragyan 2023 report', href: 'https://nitt.edu/home/students/clubsnassocs/techclubs/Technical%20Term%20Report%202022-2023.pdf' }]
+        }
+      ],
+      also: [
+        {
+          text: 'In 2022, I won the Shaastra Web Crawler Hackathon at IIT Madras and the Tri-NIT Hackathon. See the Delta Force results.',
+          link: { text: 'Delta Force results', href: 'https://www.nitt.edu/home/students/clubsnassocs/techclubs/delta/Delta%20Force%20Term%20Report%202022.pdf' }
         }
       ]
     },
@@ -93,20 +104,23 @@ window.EXPERIENCE = {
       id: 'y2019', label: '2019–21', years: '2019–21',
       role: 'Student at NIT Trichy',
       miles: [
-        { obj: 'nit-trichy', kind: 'soft', text: '2019: I started a B.Tech at NIT Trichy.' }
+        { obj: 'nit-trichy', kind: 'soft', text: 'I started my B.Tech in 2019.' }
       ],
       blocks: [
         {
           obj: 'nit-trichy', title: 'NIT Trichy', thing: 'the lotus kund',
-          lines: ['I studied for a B.Tech at NIT Trichy from 2019 to 2023.'],
+          lines: ['I earned my **B.Tech at NIT Trichy** in 2023. While I was there, I built software for students with Delta Force.'],
           parts: [
             {
               obj: 'delta-force', title: 'Delta Force', thing: 'the cranes',
-              text: 'In September 2020 I joined Delta Force, the coding club of NIT Trichy, and built the web platforms the college runs on, used by more than 10,000 students.',
-              links: [{ text: 'Dalal Street, a stock market game', href: 'projects.html#dalal-street' }]
+              text: 'I joined Delta Force, the campus programming club, as a full-stack developer in 2020. I built campus platforms used by **more than 10,000 students** and worked on the Go backend for Dalal Street, the stock market game at Pragyan.',
+              links: [
+                { text: 'Delta Force', href: 'https://delta.nitt.edu/' },
+                { text: 'My Dalal Street work', href: 'projects.html#dalal-street' }
+              ]
             }
           ],
-          links: [{ text: 'NIT Trichy', href: 'https://www.nitt.edu/' }]
+          links: [{ text: 'NIT Trichy', href: 'https://www.nitt.edu/home/' }]
         }
       ]
     }
@@ -114,13 +128,13 @@ window.EXPERIENCE = {
 
   // things to hover, not stops: by the thing's id in the manifest's "hot", and the year it belongs to
   hover: [
-    { obj: 'hackathons', year: 'y2022', text: '2022: won the Shaastra Web Crawler Hackathon at IIT Madras and the Tri-NIT Hackathon' }
+    { obj: 'hackathons', year: 'y2022', text: 'I won the Shaastra Web Crawler Hackathon at IIT Madras and the Tri-NIT Hackathon in 2022.' }
   ],
 
   // WAITING FOR AJITHA: the water stands for the years before college.
   water: {
-    id: 'before', label: 'Before', years: 'Before', role: 'Where it started',
-    lines: ['Under the water are the years before college. This part is still to be written.'],
+    id: 'before', label: 'Before', years: 'Before', role: 'Before college',
+    lines: ['My timeline starts in 2019, when I began my B.Tech at NIT Trichy.'],
     waiting: true
   },
 
