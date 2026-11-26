@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Writing - Ajitha Prasad</title>
+<meta name="description" content="Articles by Ajitha Prasad.">
+<meta property="og:title" content="Writing - Ajitha Prasad">
+<meta property="og:description" content="Articles by Ajitha Prasad.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#b3301f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239fcbe0'/%3E%3Ccircle cx='21' cy='11' r='5' fill='%23f2a51f'/%3E%3Cpath d='M0 20h32v6a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z' fill='%2327357f'/%3E%3Cpath d='M7 22h15c0 3-3 5-7.5 5S7 25 7 22z' fill='%23d5432a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="writing.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="home tab" href="index.html">Ajitha Prasad</a>
+  <nav class="tab pages" aria-label="Pages">
+    <a href="projects.html">Projects</a>
+    <a href="experience.html">Experience</a>
+  </nav>
+</header>
+
+<!-- The wall: a Mewar elephant with its rider, painted on lime plaster by src/mural/ (painter.js, elephant.js, haveli.js).
+     #wall is painted once (and again after a resize); #shade holds the leaf shadows that move on it. -->
+<canvas class="scene" id="wall" aria-hidden="true"></canvas>
+<canvas class="scene" id="shade" aria-hidden="true"></canvas>
+
+<!-- The scroll hangs on the empty wall in front of the elephant, and unrolls.  writing.js paints the paper, the staves,
+     the cord and the tassels with the brush engine of the mural; the text is plain HTML on top.
+     To add an article, copy the <li> in the list and put the new one first (newest at the top). -->
+
+
+<main class="scroll" id="scroll">
+  <canvas class="cord" id="cord" aria-hidden="true"></canvas>
+  <canvas class="stave" id="stave" aria-hidden="true"></canvas>
+  <div class="roll" id="roll">
+    <div class="sheet" id="text">
+      <canvas class="paper" id="paper" aria-hidden="true"></canvas>
+      <h1><span>Writing</span></h1>
+      <p class="lead">Notes on what I build and what I learn on the way.</p>
+
+      <ol class="index">
+        <li>
+          <a class="name" href="https://files.ajitha.fyi/agents-on-incidents">Benchmarking agents on incidents</a>
+          <time class="when" datetime="2026-11-24">November 2026</time>
+          <p>I gave AI agents the same production incidents, then scored how well each one found the root cause.</p>
+        </li>
+      </ol>
+
+      <div class="end" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="spool">
+    <canvas id="spool" aria-hidden="true"></canvas>
+    <span class="tassel l" aria-hidden="true"><canvas></canvas></span>
+    <span class="tassel r" aria-hidden="true"><canvas></canvas></span>
+  </div>
+</main>
+
+<script src="src/mural/painter.js"></script>
+<script src="src/mural/elephant.js"></script>
+<script src="src/mural/haveli.js"></script>
+<script src="writing.js"></script>
+<script>
+  if (location.protocol === 'https:' || location.protocol === 'http:') {
+    window.addEventListener('load', function () {
+      var counter = document.createElement('script');
+      counter.dataset.goatcounter = 'https://kelpikz.goatcounter.com/count';
+      counter.src = 'https://gc.zgo.at/count.js';
+      document.head.appendChild(counter);
+    }, { once: true });
+  }
+</script>
+</body>
+</html>

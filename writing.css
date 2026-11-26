@@ -1,0 +1,131 @@
+/* Writing: a scroll of parchment unrolls on a haveli wall, in front of a painted elephant.
+   The wall is two fixed canvases painted by src/mural/ (haveli.js lays it out: on a wide screen the elephant keeps to
+   the left and leaves the right part of the wall empty for the scroll).  The scroll moves with the page.
+   It unrolls down: the lower rod rides down as the sheet opens. */
+
+:root {
+  --ink: #1b1613; --pale: #f6f0e2; --sindoor: #a3261a; --maroon: #7a1321; --haldi: #f3bd45; --gold: #c9982e; --red: #b3301f;
+  /* the painted cornice and frieze band at the top of the wall (haveli.js: c, and f = c / 2) */
+  --cornice: clamp(44px, 7.5vh, 78px);
+  /* the text sits inside the painted border of the sheet (writing.js: S, BT, GAP, the band, and the rules inside it) */
+  --px: 53px; --pt: 69px; --pb: 59px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; overflow-x: clip; color: var(--ink);
+  font-family: 'Eczar', Georgia, 'Times New Roman', serif; font-size: 1.0625rem; line-height: 1.5;
+  background: #eddb9f;   /* the lime plaster, until the wall is painted */
+}
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--sindoor); text-decoration-thickness: .09em; text-underline-offset: .2em; transition: color .15s ease; }
+a:hover { color: var(--sindoor); }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--sindoor); color: var(--pale); }
+
+/* ---- the paper tabs, as on the other pages, pinned to the painted cornice ---- */
+.top {
+  position: absolute; z-index: 20; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: .5em 1em;
+  padding: 10px clamp(10px, 2.4vw, 34px);
+}
+.tab { background: var(--pale); color: var(--ink); line-height: 1.25; box-shadow: inset 0 0 0 1px rgba(27, 22, 19, .5), 0 1px 2px rgba(30, 10, 4, .45); }
+.home { font-weight: 600; text-decoration: none; padding: .26em .8em .16em; transform: rotate(-1.2deg); white-space: nowrap; }
+.home:hover { color: var(--sindoor); }
+.pages { display: flex; gap: .9em; padding: .26em .8em .16em; font-size: .95rem; font-weight: 500; transform: rotate(.8deg); }
+.pages a { text-decoration: none; opacity: .8; }
+.pages a:hover { opacity: 1; }
+
+/* ---- the wall ---- */
+canvas.scene { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+
+/* ---- the scroll ----
+   writing.js paints it; these rules only place the pieces.  The measures here and in writing.js go together:
+   the staves reach 34px past the paper on each side (EXT), the canvas of the upper stave is 32px high with the stave
+   15px down (TH, TCY), the cord rises 64px above that (HC), and the lower canvas starts 12px up on the paper (SH). */
+.scroll {
+  position: relative; z-index: 1;
+  width: calc(100vw - 88px); max-width: 560px;
+  /* the peg of the cord sits just under the painted frieze band */
+  margin: calc(var(--cornice) * 1.5 + 62px) auto 110px;
+  transform-origin: 50% -37px;          /* the peg */
+}
+/* on a wide screen the elephant keeps to the left (haveli.js), and the scroll hangs on the empty wall to its right:
+   the part of the wall from 95% of the width back by min(640px, 46%) */
+@media (min-width: 1001px) {
+  .scroll { width: calc(min(640px, 46vw) - 68px); max-width: none; margin-right: calc(5vw + 34px); }
+}
+
+.cord { position: absolute; z-index: 0; top: -50px; left: -34px; display: block; pointer-events: none; }
+.stave { position: relative; z-index: 3; display: block; margin: 0 -34px; filter: drop-shadow(1px 4px 3px rgba(50, 22, 4, .4)); }
+/* the sheet starts at the top of the stave, under it: the brocade goes on over the stave */
+.roll { position: relative; z-index: 1; margin-top: -26px; clip-path: inset(0 -80px 0 -80px); }
+.spool { position: relative; z-index: 2; margin: -12px -34px 0; height: 60px; }
+.spool > canvas { display: block; filter: drop-shadow(1px 5px 4px rgba(50, 22, 4, .38)); }
+.tassel { position: absolute; top: 33px; left: 17px; width: 22px; height: 66px; transform-origin: 50% 0; animation: sway 4.6s ease-in-out infinite alternate; pointer-events: none; }
+.tassel.r { left: auto; right: 17px; animation-duration: 5.3s; animation-delay: -1.7s; }
+.tassel canvas { display: block; filter: drop-shadow(2px 5px 3px rgba(50, 22, 4, .3)); }
+@keyframes sway { from { transform: rotate(-3deg); } to { transform: rotate(2.5deg); } }
+
+/* before the scroll is painted it is hidden and shut; then it is hung, it opens, and it swings once on its peg */
+html.js .scroll { opacity: 0; transform: translateY(-14px); transition: opacity .6s ease, transform 1s cubic-bezier(.3, 1.5, .5, 1); }
+html.js .scroll.hung { opacity: 1; transform: none; }
+html.js .roll { height: 18px; }
+.scroll.settle { animation: settle 3.4s cubic-bezier(.3, .6, .4, 1); }
+@keyframes settle {
+  0% { transform: rotate(0); } 14% { transform: rotate(.85deg); } 33% { transform: rotate(-.55deg); }
+  52% { transform: rotate(.3deg); } 70% { transform: rotate(-.14deg); } 86% { transform: rotate(.05deg); } 100% { transform: rotate(0); }
+}
+
+/* the sheet.  Without the painting it is a plain sheet with a plain border. */
+.sheet {
+  position: relative; isolation: isolate; padding: var(--pt) var(--px) var(--pb); color: #24170f;
+  /* a full-length scroll, however short the list: it reaches down to the plinth of the wall (haveli.js: the plinth is
+     14% of the height), and the lotus and the seal stay at its foot */
+  display: flex; flex-direction: column;
+  min-height: max(520px, calc(100vh - var(--cornice) * 1.5 - 56px - 14vh - 56px));
+}
+.paper { position: absolute; z-index: -1; top: 0; left: 0; display: block; pointer-events: none; filter: drop-shadow(0 8px 12px rgba(50, 22, 4, .32)); }
+html:not(.painted) .sheet { background: #f0e1ba; box-shadow: inset 0 0 0 14px #f0e1ba, inset 0 0 0 17px var(--red), 0 10px 24px rgba(50, 22, 4, .35); }
+html:not(.painted) .cord, html:not(.painted) .stave, html:not(.painted) .spool, html:not(.painted) .paper { display: none; }
+
+h1 { margin: 0; text-align: center; font-size: clamp(2rem, 5.4vw, 2.5rem); font-weight: 700; line-height: 1.05; color: var(--maroon); letter-spacing: .005em; text-shadow: 0 1px 0 rgba(255, 236, 180, .45); }
+h1 span { display: inline-block; }
+.lead { margin: 1.3em 0 0; text-align: center; font-size: 1rem; color: rgba(36, 23, 15, .78); }
+
+/* the index: each number is written in a painted gold roundel (writing.js reads the place of ::before) */
+.index { list-style: none; margin: 1em 0 0; padding: 0; counter-reset: n; }
+.index li {
+  counter-increment: n; position: relative;
+  display: grid; grid-template-columns: 1fr auto; column-gap: 1em; align-items: baseline;
+  padding: 1.05em 0 1em 2.85em;
+}
+.index li::before {
+  content: counter(n, decimal-leading-zero); position: absolute; left: 3px; top: .82em; width: 26px; height: 26px;
+  font-size: .74rem; font-weight: 700; line-height: 28px; text-align: center; color: var(--maroon);
+}
+html:not(.painted) .index li + li { border-top: 1px solid rgba(122, 19, 33, .25); }
+.name { font-size: 1.14rem; font-weight: 600; line-height: 1.3; color: #1d1410; }
+a.name { text-decoration-color: rgba(163, 38, 26, .55); }
+a.name:hover { color: var(--sindoor); }
+.when { font-size: .8rem; font-weight: 500; color: rgba(36, 23, 15, .62); white-space: nowrap; }
+.index p { grid-column: 1 / -1; margin: .3em 0 0; font-size: .95rem; line-height: 1.5; color: rgba(36, 23, 15, .78); }
+
+/* room at the foot for the lotus and the seal */
+.end { flex: none; height: 58px; margin-top: auto; padding-top: .4em; box-sizing: content-box; }
+
+/* ---- phones: the elephant fills the screen first; the top of the scroll peeks up, and it scrolls up over him ---- */
+@media (max-width: 560px) {
+  .sheet { min-height: 620px; }
+  :root { --px: 43px; --pt: 65px; --pb: 55px; }
+  .scroll { margin-top: calc(100svh - 150px); }
+  .cord { display: none; }              /* its peg would be nailed into the elephant: here the scroll rises from below */
+  .index li { grid-template-columns: 1fr; padding-left: 2.6em; }
+  .when { margin-top: .35em; justify-self: start; }
+  .home, .pages { font-size: .9rem; }
+  .pages { gap: .6em; padding-inline: .6em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tassel { animation: none; }
+  html.js .scroll { transition: none; }
+}
