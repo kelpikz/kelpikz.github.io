@@ -573,15 +573,19 @@
   }
 
   function open() {
-    const T = 2600, t0 = performance.now();
-    scroll.classList.add('hung');
+    const T = 2400;
+    let t0 = 0, prev = 0;
     const step = (now) => {
+      t0 = t0 || now;   // count from the first frame, so a busy start does not skip the beginning
+      // a late frame pauses the unrolling, it does not make it jump
+      if (prev && now - prev > 50) t0 += now - prev - 17;
+      prev = now;
       prog = Math.min(1, (now - t0) / T);
       if (prog >= 1) { opened = true; frame(); scroll.classList.add('settle'); return; }
       frame();
       requestAnimationFrame(step);
     };
-    setTimeout(() => requestAnimationFrame(step), 500);
+    requestAnimationFrame(step);
   }
 
   try {
@@ -591,8 +595,27 @@
     plain();
     throw e;
   }
-  if (still) scroll.classList.add('hung');
-  else open();
+  // the shut scroll hangs at once.  It unrolls when the wall is painted (haveli.js sends 'wall:ready'): painting the
+  // wall stops the page for a moment, and the unrolling must not stop with it.
+  scroll.classList.add('hung');
+  if (!still) {
+    let started = false;
+    // start when the browser draws smoothly again: 8 frames in a row, each on time (or after 1.5 s at most)
+    const go = () => {
+      if (started) return;
+      started = true;
+      let ok = 0, prev = 0;
+      const t1 = performance.now();
+      const wait = (now) => {
+        ok = prev && now - prev < 25 ? ok + 1 : 0;
+        prev = now;
+        if (ok >= 8 || now - t1 > 1500) open(); else requestAnimationFrame(wait);
+      };
+      requestAnimationFrame(wait);
+    };
+    document.addEventListener('wall:ready', go, { once: true });
+    setTimeout(go, 2500);   // the wall is late, or it failed
+  }
 
   // paint again when the text changes size (the font arrives, the window turns) or the font of the seal arrives
   let timer = 0;

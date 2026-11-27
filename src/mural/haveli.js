@@ -221,7 +221,8 @@
     let sprites = null, size = { W: 0, H: 0 }, raf = 0;
 
     function render() {
-      const dpr = Math.min(2, window.devicePixelRatio || 1), W = innerWidth, H = innerHeight;
+      // 1.5 at most: the wall is soft paint, and a sharper canvas costs much more time to paint
+      const dpr = Math.min(1.5, window.devicePixelRatio || 1), W = innerWidth, H = innerHeight;
       size = { W, H };
       wall.width = Math.round(W * dpr); wall.height = Math.round(H * dpr);
       const g = wall.getContext('2d');
@@ -240,6 +241,8 @@
       shade.width = Math.round(W * dpr); shade.height = Math.round(H * dpr);
       sprites = sprites || [leafSprite(3, 520), leafSprite(8, 440), leafSprite(15, 380)];
       drawShade(0);
+      wall.classList.add('ready'); shade.classList.add('ready');
+      document.dispatchEvent(new Event('wall:ready'));
     }
 
     function drawShade(t) {
@@ -274,5 +277,6 @@
     });
   }
 
-  if (document.getElementById('wall')) start();
+  // paint the wall after the first frame, so the text of the page shows first
+  if (document.getElementById('wall')) requestAnimationFrame(() => setTimeout(start, 0));
 })();

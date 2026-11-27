@@ -37,6 +37,9 @@ a:hover { color: var(--sindoor); }
 
 /* ---- the wall ---- */
 canvas.scene { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+/* the wall is painted just after the first frame (haveli.js), and fades in */
+html.js canvas.scene { opacity: 0; transition: opacity .5s ease; }
+html.js canvas.scene.ready { opacity: 1; }
 
 /* ---- the scroll ----
    writing.js paints it; these rules only place the pieces.  The measures here and in writing.js go together:
@@ -127,5 +130,5 @@ a.name:hover { color: var(--sindoor); }
 
 @media (prefers-reduced-motion: reduce) {
   .tassel { animation: none; }
-  html.js .scroll { transition: none; }
+  html.js .scroll, html.js canvas.scene { transition: none; }
 }
