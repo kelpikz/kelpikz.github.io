@@ -215,6 +215,10 @@
     return { c, f, p, s, ew, eh, left: tall ? x1 - ew : x0 + (x1 - x0 - ew) / 2, top: H - p - 10 - (1098 - EB.y) * s };
   }
 
+  // the height of the wall: the canvas is as tall as the screen when the address bar of a phone browser is hidden
+  // (writing.css: 100lvh), so the wall does not change when that bar hides or shows
+  const viewH = () => document.getElementById('wall').clientHeight || innerHeight;
+
   function start() {
     const wall = document.getElementById('wall'), shade = document.getElementById('shade');
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -222,7 +226,7 @@
 
     function render() {
       // 1.5 at most: the wall is soft paint, and a sharper canvas costs much more time to paint
-      const dpr = Math.min(1.5, window.devicePixelRatio || 1), W = innerWidth, H = innerHeight;
+      const dpr = Math.min(1.5, window.devicePixelRatio || 1), W = innerWidth, H = viewH();
       size = { W, H };
       wall.width = Math.round(W * dpr); wall.height = Math.round(H * dpr);
       const g = wall.getContext('2d');
@@ -267,11 +271,11 @@
 
     render();
     if (!still) raf = requestAnimationFrame(loop);
-    let timer = 0, last = innerWidth + 'x' + innerHeight;
+    let timer = 0, last = innerWidth + 'x' + viewH();
     addEventListener('resize', () => {
       clearTimeout(timer);
       timer = setTimeout(() => {
-        const now = innerWidth + 'x' + innerHeight;
+        const now = innerWidth + 'x' + viewH();
         if (now !== last) { last = now; render(); }
       }, 250);
     });
